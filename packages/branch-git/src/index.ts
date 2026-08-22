@@ -484,32 +484,30 @@ async function currentWindowsUserSid(): Promise<string> {
 
 async function setWindowsCurrentUserOnly(directory: string, currentUserSid: string): Promise<void> {
   const systemRoot = process.env.SystemRoot ?? "C:\\Windows";
-  const powershell = join(systemRoot, "System32", "WindowsPowerShell", "v1.0", "powershell.exe");
-  const exactDacl = [
-    "$acl = Get-Acl -LiteralPath $env:REMO_ACL_PATH",
-    "$sddl = 'D:P(A;OICI;FA;;;' + $env:REMO_CURRENT_USER_SID + ')'",
-    "$acl.SetSecurityDescriptorSddlForm($sddl, [System.Security.AccessControl.AccessControlSections]::Access)",
-    "Set-Acl -LiteralPath $env:REMO_ACL_PATH -AclObject $acl",
-  ].join("; ");
-  await execFileAsync(powershell, ["-NoProfile", "-NonInteractive", "-Command", exactDacl], {
-    shell: false,
-    encoding: "utf8",
-    windowsHide: true,
-    env: { SYSTEMROOT: systemRoot, REMO_ACL_PATH: directory, REMO_CURRENT_USER_SID: currentUserSid },
-  });
+  const icacls = join(systemRoot, "System32", "icacls.exe");
+  await execFileAsync(icacls, [directory, "/inheritance:r", "/grant:r", `*${currentUserSid}:(OI)(CI)F`], { shell: false, encoding: "utf8", windowsHide: true });
 }
 
 async function verifyWindowsCurrentUserOnly(directory: string, currentUserSid: string, unsafeReason: string): Promise<void> {
   const systemRoot = process.env.SystemRoot ?? "C:\\Windows";
   const powershell = join(systemRoot, "System32", "WindowsPowerShell", "v1.0", "powershell.exe");
-  const result = await execFileAsync(powershell, ["-NoProfile", "-NonInteractive", "-Command", "(Get-Acl -LiteralPath $env:REMO_ACL_PATH).Sddl"], {
+  const accessEvidence = [
+    "$acl = Get-Acl -LiteralPath $env:REMO_ACL_PATH",
+    "Write-Output ('PROTECTED=' + $acl.AreAccessRulesProtected)",
+    "$acl.GetAccessRules($true, $true, [System.Security.Principal.SecurityIdentifier]) | ForEach-Object { Write-Output ($_.IdentityReference.Value + '|' + $_.AccessControlType) }",
+  ].join("; ");
+  const result = await execFileAsync(powershell, ["-NoProfile", "-NonInteractive", "-Command", accessEvidence], {
     shell: false,
     encoding: "utf8",
     windowsHide: true,
     env: { SYSTEMROOT: systemRoot, REMO_ACL_PATH: directory },
   });
-  const trustees = [...result.stdout.matchAll(/;;;([^)]+)\)/gu)].map((match) => match[1]!);
-  if (trustees.length === 0 || trustees.some((trustee) => comparable(trustee) !== comparable(currentUserSid))) throw new Error(unsafeReason);
+  const [protection, ...rules] = result.stdout.split(/\r?\n/u).map((line) => line.trim()).filter(Boolean);
+  if (protection?.toLowerCase() !== "protected=true" || rules.length === 0) throw new Error(unsafeReason);
+  if (rules.some((rule) => {
+    const [trustee, accessType, ...unexpected] = rule.split("|");
+    return unexpected.length !== 0 || comparable(trustee ?? "") !== comparable(currentUserSid) || accessType?.toLowerCase() !== "allow";
+  })) throw new Error(unsafeReason);
 }
 
 async function verifyEmptyPrivateHooksDirectory(repositoryRoot: string, hooksDirectory: string): Promise<void> {
