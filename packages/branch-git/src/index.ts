@@ -487,10 +487,12 @@ async function setWindowsCurrentUserOnly(directory: string, currentUserSid: stri
   const powershell = join(systemRoot, "System32", "WindowsPowerShell", "v1.0", "powershell.exe");
   const exactAccess = [
     "$ErrorActionPreference = 'Stop'",
-    "$acl = [System.IO.Directory]::GetAccessControl($env:REMO_ACL_PATH)",
+    "$securityModule = Join-Path $PSHOME 'Modules\\Microsoft.PowerShell.Security\\Microsoft.PowerShell.Security.psd1'",
+    "Import-Module -Name $securityModule -Force -ErrorAction Stop",
+    "$acl = Get-Acl -LiteralPath $env:REMO_ACL_PATH",
     "$sddl = 'D:P(A;OICI;FA;;;' + $env:REMO_CURRENT_USER_SID + ')'",
     "$acl.SetSecurityDescriptorSddlForm($sddl, [System.Security.AccessControl.AccessControlSections]::Access)",
-    "[System.IO.Directory]::SetAccessControl($env:REMO_ACL_PATH, $acl)",
+    "Set-Acl -LiteralPath $env:REMO_ACL_PATH -AclObject $acl",
   ].join("\n");
   const encoded = Buffer.from(exactAccess, "utf16le").toString("base64");
   await execFileAsync(powershell, ["-NoLogo", "-NoProfile", "-NonInteractive", "-EncodedCommand", encoded], {
@@ -507,7 +509,9 @@ async function verifyWindowsCurrentUserOnly(directory: string, currentUserSid: s
   const powershell = join(systemRoot, "System32", "WindowsPowerShell", "v1.0", "powershell.exe");
   const accessEvidence = [
     "$ErrorActionPreference = 'Stop'",
-    "$acl = [System.IO.Directory]::GetAccessControl($env:REMO_ACL_PATH)",
+    "$securityModule = Join-Path $PSHOME 'Modules\\Microsoft.PowerShell.Security\\Microsoft.PowerShell.Security.psd1'",
+    "Import-Module -Name $securityModule -Force -ErrorAction Stop",
+    "$acl = Get-Acl -LiteralPath $env:REMO_ACL_PATH",
     "Write-Output ('PROTECTED=' + $acl.AreAccessRulesProtected)",
     "$acl.GetAccessRules($true, $true, [System.Security.Principal.SecurityIdentifier]) | ForEach-Object { Write-Output ($_.IdentityReference.Value + '|' + $_.AccessControlType) }",
   ].join("\n");
