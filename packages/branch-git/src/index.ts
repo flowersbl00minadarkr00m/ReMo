@@ -492,6 +492,12 @@ async function setWindowsCurrentUserOnly(directory: string, currentUserSid: stri
     windowsHide: true,
     timeout: 30_000,
   });
+  await execFileAsync(icacls, [directory, "/remove:g", "*S-1-5-18", "*S-1-5-32-544", "/q"], {
+    shell: false,
+    encoding: "utf8",
+    windowsHide: true,
+    timeout: 30_000,
+  });
 }
 
 async function verifyWindowsCurrentUserOnly(directory: string, currentUserSid: string, unsafeReason: string): Promise<void> {
@@ -509,16 +515,13 @@ async function verifyWindowsCurrentUserOnly(directory: string, currentUserSid: s
       .split(/\r?\n/u)
       .map((line) => line.trim())
       .filter((line) => line.startsWith("D:"));
-    const redacted = descriptors.map((value) => value.replaceAll(currentUserSid, "CURRENT_USER")).join("|");
-    const diagnosticReason = `${unsafeReason}:sddl=${redacted}`;
-    if (descriptors.length !== 1) throw new Error(diagnosticReason);
+    if (descriptors.length !== 1) throw new Error(unsafeReason);
     const descriptor = /^D:((?:P|AR|AI)*)((?:\([^()]+\))+)$/u.exec(descriptors[0]!);
-    if (descriptor === null) throw new Error(diagnosticReason);
-    if (!descriptor[1]!.includes("P")) throw new Error(diagnosticReason);
+    if (descriptor === null || !descriptor[1]!.includes("P")) throw new Error(unsafeReason);
     const aces = [...descriptor[2]!.matchAll(/\(([^()]*)\)/gu)];
-    if (aces.length !== 1) throw new Error(diagnosticReason);
+    if (aces.length !== 1) throw new Error(unsafeReason);
     const fields = aces[0]![1]!.split(";");
-    if (fields.length !== 6) throw new Error(diagnosticReason);
+    if (fields.length !== 6) throw new Error(unsafeReason);
     const [type, rawFlags, rights, objectType, inheritedObjectType, trustee] = fields;
     const flags = rawFlags?.match(/[A-Z]{2}/gu) ?? [];
     if (
@@ -528,8 +531,12 @@ async function verifyWindowsCurrentUserOnly(directory: string, currentUserSid: s
       || rights !== "FA"
       || objectType !== ""
       || inheritedObjectType !== ""
-      || comparable(trustee ?? "") !== comparable(currentUserSid)
-    ) throw new Error(diagnosticReason);
+      || (
+        comparable(trustee ?? "") !== comparable(currentUserSid)
+        // Windows serializes the built-in local Administrator SID (*-500) as the SDDL alias LA.
+        && !(trustee === "LA" && currentUserSid.endsWith("-500"))
+      )
+    ) throw new Error(unsafeReason);
   } finally {
     await rm(evidencePath, { force: true });
   }
