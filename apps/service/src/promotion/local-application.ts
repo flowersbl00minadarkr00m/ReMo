@@ -1,7 +1,7 @@
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
 import { createServer, type Server } from "node:http";
 import { existsSync, lstatSync, readFileSync, realpathSync, statSync } from "node:fs";
-import { extname, join, relative, resolve, sep } from "node:path";
+import { extname, join, parse, relative, resolve, sep } from "node:path";
 import { pathToFileURL } from "node:url";
 import type { BundleManifest, ComparisonContext, ComparisonSideInput, ComponentType, CorrelationTuple, EvidenceDescriptor, FinalizationInput } from "@remo/domain";
 import { isValidProductSavePointId, matchProductRoute, sha256Canonical, type ProductRouteBootstrap, type RouteRecoveryState } from "@remo/domain";
@@ -82,11 +82,16 @@ function implementationFixture(decisionTurn4 = false): CandidateReviewRecord {
 
 function canonicalProjectRoot(path: string): string {
   const unresolved = resolve(path);
-  const unresolvedEntry = lstatSync(unresolved);
-  if (unresolvedEntry.isSymbolicLink()) throw new Error("Configured project root cannot be a symbolic link, junction, or reparse point");
+  const volumeRoot = parse(unresolved).root;
+  let cursor = volumeRoot;
+  for (const segment of relative(volumeRoot, unresolved).split(sep).filter(Boolean)) {
+    cursor = join(cursor, segment);
+    if (lstatSync(cursor).isSymbolicLink()) throw new Error("Configured project root cannot be a symbolic link, junction, or reparse point");
+  }
   const root = realpathSync.native(unresolved);
   const comparable = (value: string): string => process.platform === "win32" ? value.toLocaleLowerCase("en-US") : value;
-  if (comparable(root) !== comparable(unresolved)) throw new Error("Configured project root must already be its canonical native path and cannot traverse a reparse point");
+  // Windows may supply a legitimate 8.3 short path (for example RUNNER~1) even when no path segment is a reparse point.
+  if (process.platform !== "win32" && comparable(root) !== comparable(unresolved)) throw new Error("Configured project root must already be its canonical native path and cannot traverse a reparse point");
   if (!statSync(root).isDirectory() || !existsSync(join(root, ".git"))) throw new Error("Configured project root must be an existing canonical Git project root");
   return root;
 }

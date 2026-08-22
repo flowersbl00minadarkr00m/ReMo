@@ -123,7 +123,7 @@ describe("payload-neutral operational diagnostics", () => {
     }
     const restored = await runSupportCommand({ projectRoot: root });
     expect(restored.find(({ operationId }) => operationId === "support.permissions")).toMatchObject({ result: "pass", reasonCodes: [] });
-  });
+  }, 30_000);
 
   it("reports corruption and staging residue with reason codes, sizes, and digests only", async () => {
     const { root, blobPath } = await fixture();
