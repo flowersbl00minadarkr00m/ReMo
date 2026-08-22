@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   verify:
-    runs-on: ubuntu-24.04
+    runs-on: windows-latest
     timeout-minutes: 20
     steps:
       - name: Check out source
@@ -30,7 +30,7 @@ jobs:
       - name: Install locked dependencies
         run: pnpm install --frozen-lockfile
       - name: Install Chromium for capture tests
-        run: pnpm --filter @remo/capture-playwright exec playwright install --with-deps chromium
+        run: pnpm --filter @remo/capture-playwright exec playwright install chromium
       - name: Lint
         run: pnpm lint
       - name: Type-check

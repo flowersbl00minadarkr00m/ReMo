@@ -141,7 +141,7 @@ describe("finite hostile-safe branch Git adapter", () => {
   it("creates exactly one derived ref and one locked worktree at the exact source commit", async () => {
     const fixture = await fixtureRepository();
     const { adapter, request } = await requestFor(fixture);
-    expect((await git(fixture.repositoryRoot, ["--version"])).trim()).toBe("git version 2.53.0.windows.1");
+    expect((await git(fixture.repositoryRoot, ["--version"])).trim()).toMatch(/^git version \d+\.\d+\.\d+\.windows\.\d+$/);
     const originalIndex = await readFile(join(fixture.repositoryRoot, ".git", "index"));
     const originalSource = await readFile(join(fixture.repositoryRoot, SOURCE, "app.txt"));
     const originalMain = (await git(fixture.repositoryRoot, ["rev-parse", "refs/heads/main"])).trim();
