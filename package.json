@@ -25,7 +25,7 @@
     "support:vs001": "pnpm --dir apps/service exec tsx src/support/cli.ts"
   },
   "devDependencies": {
-    "@eslint/js": "9.39.1",
+    "@eslint/js": "9.39.5",
     "@types/node": "24.10.1",
     "eslint": "9.39.1",
     "typescript": "5.9.3",
