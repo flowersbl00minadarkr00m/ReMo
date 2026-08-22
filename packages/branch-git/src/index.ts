@@ -509,13 +509,16 @@ async function verifyWindowsCurrentUserOnly(directory: string, currentUserSid: s
       .split(/\r?\n/u)
       .map((line) => line.trim())
       .filter((line) => line.startsWith("D:"));
-    if (descriptors.length !== 1) throw new Error(unsafeReason);
+    const redacted = descriptors.map((value) => value.replaceAll(currentUserSid, "CURRENT_USER")).join("|");
+    const diagnosticReason = `${unsafeReason}:sddl=${redacted}`;
+    if (descriptors.length !== 1) throw new Error(diagnosticReason);
     const descriptor = /^D:((?:P|AR|AI)*)((?:\([^()]+\))+)$/u.exec(descriptors[0]!);
-    if (descriptor === null || !descriptor[1]!.includes("P")) throw new Error(unsafeReason);
+    if (descriptor === null) throw new Error(diagnosticReason);
+    if (!descriptor[1]!.includes("P")) throw new Error(diagnosticReason);
     const aces = [...descriptor[2]!.matchAll(/\(([^()]*)\)/gu)];
-    if (aces.length !== 1) throw new Error(unsafeReason);
+    if (aces.length !== 1) throw new Error(diagnosticReason);
     const fields = aces[0]![1]!.split(";");
-    if (fields.length !== 6) throw new Error(unsafeReason);
+    if (fields.length !== 6) throw new Error(diagnosticReason);
     const [type, rawFlags, rights, objectType, inheritedObjectType, trustee] = fields;
     const flags = rawFlags?.match(/[A-Z]{2}/gu) ?? [];
     if (
@@ -526,7 +529,7 @@ async function verifyWindowsCurrentUserOnly(directory: string, currentUserSid: s
       || objectType !== ""
       || inheritedObjectType !== ""
       || comparable(trustee ?? "") !== comparable(currentUserSid)
-    ) throw new Error(unsafeReason);
+    ) throw new Error(diagnosticReason);
   } finally {
     await rm(evidencePath, { force: true });
   }
