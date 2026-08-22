@@ -484,22 +484,39 @@ async function currentWindowsUserSid(): Promise<string> {
 
 async function setWindowsCurrentUserOnly(directory: string, currentUserSid: string): Promise<void> {
   const systemRoot = process.env.SystemRoot ?? "C:\\Windows";
-  const icacls = join(systemRoot, "System32", "icacls.exe");
-  await execFileAsync(icacls, [directory, "/inheritance:r", "/grant:r", `*${currentUserSid}:(OI)(CI)F`], { shell: false, encoding: "utf8", windowsHide: true });
+  const powershell = join(systemRoot, "System32", "WindowsPowerShell", "v1.0", "powershell.exe");
+  const exactAccess = [
+    "$ErrorActionPreference = 'Stop'",
+    "$acl = [System.IO.Directory]::GetAccessControl($env:REMO_ACL_PATH)",
+    "$sddl = 'D:P(A;OICI;FA;;;' + $env:REMO_CURRENT_USER_SID + ')'",
+    "$acl.SetSecurityDescriptorSddlForm($sddl, [System.Security.AccessControl.AccessControlSections]::Access)",
+    "[System.IO.Directory]::SetAccessControl($env:REMO_ACL_PATH, $acl)",
+  ].join("\n");
+  const encoded = Buffer.from(exactAccess, "utf16le").toString("base64");
+  await execFileAsync(powershell, ["-NoLogo", "-NoProfile", "-NonInteractive", "-EncodedCommand", encoded], {
+    shell: false,
+    encoding: "utf8",
+    windowsHide: true,
+    timeout: 30_000,
+    env: { SYSTEMROOT: systemRoot, REMO_ACL_PATH: directory, REMO_CURRENT_USER_SID: currentUserSid },
+  });
 }
 
 async function verifyWindowsCurrentUserOnly(directory: string, currentUserSid: string, unsafeReason: string): Promise<void> {
   const systemRoot = process.env.SystemRoot ?? "C:\\Windows";
   const powershell = join(systemRoot, "System32", "WindowsPowerShell", "v1.0", "powershell.exe");
   const accessEvidence = [
-    "$acl = Get-Acl -LiteralPath $env:REMO_ACL_PATH",
+    "$ErrorActionPreference = 'Stop'",
+    "$acl = [System.IO.Directory]::GetAccessControl($env:REMO_ACL_PATH)",
     "Write-Output ('PROTECTED=' + $acl.AreAccessRulesProtected)",
     "$acl.GetAccessRules($true, $true, [System.Security.Principal.SecurityIdentifier]) | ForEach-Object { Write-Output ($_.IdentityReference.Value + '|' + $_.AccessControlType) }",
-  ].join("; ");
-  const result = await execFileAsync(powershell, ["-NoProfile", "-NonInteractive", "-Command", accessEvidence], {
+  ].join("\n");
+  const encoded = Buffer.from(accessEvidence, "utf16le").toString("base64");
+  const result = await execFileAsync(powershell, ["-NoLogo", "-NoProfile", "-NonInteractive", "-EncodedCommand", encoded], {
     shell: false,
     encoding: "utf8",
     windowsHide: true,
+    timeout: 30_000,
     env: { SYSTEMROOT: systemRoot, REMO_ACL_PATH: directory },
   });
   const [protection, ...rules] = result.stdout.split(/\r?\n/u).map((line) => line.trim()).filter(Boolean);
