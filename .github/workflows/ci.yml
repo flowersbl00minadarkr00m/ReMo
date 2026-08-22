@@ -29,6 +29,8 @@ jobs:
           cache: pnpm
       - name: Install locked dependencies
         run: pnpm install --frozen-lockfile
+      - name: Install Chromium for capture tests
+        run: pnpm --filter @remo/capture-playwright exec playwright install --with-deps chromium
       - name: Lint
         run: pnpm lint
       - name: Type-check
