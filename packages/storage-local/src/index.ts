@@ -226,6 +226,15 @@ export function assertPrivateTreePermissions(root: string): void {
 }
 
 function secureAndVerifyPrivateTree(root: string): void {
+  // Preserve an already-private tree. Rewriting every descendant on restart can
+  // change a stricter component-owned ACL (such as branch-git's protected
+  // HOME/XDG directories) even though the storage boundary is already safe.
+  try {
+    assertPrivateTreePermissions(root);
+    return;
+  } catch {
+    // Repair the complete tree below, then fail closed if verification still fails.
+  }
   if (process.platform === "win32") {
     const sid = windowsCurrentSid();
     const icacls = "C:\\Windows\\System32\\icacls.exe";

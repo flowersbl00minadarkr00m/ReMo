@@ -81,7 +81,8 @@ export function createOperationalDiagnosticsReporter(options: {
   readonly now?: () => Date;
   readonly appendLine?: (path: string, line: string) => void;
 }): OperationalDiagnosticsReporter {
-  const path = operationalDiagnosticsPath(options.projectRoot);
+  const projectRoot = realpathSync.native(resolve(options.projectRoot));
+  const path = operationalDiagnosticsPath(projectRoot);
   const directory = resolve(path, "..");
   const previous = join(directory, "vs001-operational.previous.jsonl");
   const maxBytes = options.maxBytes ?? MAX_OPERATIONAL_DIAGNOSTICS_BYTES;
@@ -93,7 +94,6 @@ export function createOperationalDiagnosticsReporter(options: {
       const event = { ...input, ...(operationInstanceId === undefined ? {} : { operationInstanceId }) };
       const eventId = stableEventId(event);
       try {
-        const projectRoot = realpathSync.native(resolve(options.projectRoot));
         privateDirectory(resolve(projectRoot, ".remo"), projectRoot);
         privateDirectory(directory, projectRoot);
         const line = `${serializeDiagnosticEvent({ ...event, eventId, occurredAt: input.occurredAt ?? (options.now ?? (() => new Date()))().toISOString() })}\n`;

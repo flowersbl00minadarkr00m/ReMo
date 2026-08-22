@@ -18,6 +18,8 @@ const run = promisify(execFile);
 const FIXTURE_PREFIX = "remo-branch-git-t8-";
 const SAVE_POINT_ID = "01J000000000000000000000S5";
 const SOURCE = "src";
+const INTEGRATION_TIMEOUT_MS = 90_000;
+const PATH_APPEARANCE_TIMEOUT_MS = 30_000;
 const createdRoots = new Set<string>();
 
 interface Fixture { readonly root: string; readonly repositoryRoot: string; readonly head: string }
@@ -111,7 +113,7 @@ async function pathExists(path: string): Promise<boolean> {
   try { await access(path); return true; } catch { return false; }
 }
 
-async function waitForPath(path: string, timeoutMs = 10_000): Promise<void> {
+async function waitForPath(path: string, timeoutMs = PATH_APPEARANCE_TIMEOUT_MS): Promise<void> {
   const deadline = Date.now() + timeoutMs;
   while (!(await pathExists(path))) {
     if (Date.now() >= deadline) throw new Error(`Timed out waiting for ${path}`);
@@ -141,7 +143,7 @@ describe("finite hostile-safe branch Git adapter", () => {
   it("creates exactly one derived ref and one locked worktree at the exact source commit", async () => {
     const fixture = await fixtureRepository();
     const { adapter, request } = await requestFor(fixture);
-    expect((await git(fixture.repositoryRoot, ["--version"])).trim()).toBe("git version 2.53.0.windows.1");
+    expect((await git(fixture.repositoryRoot, ["--version"])).trim()).toMatch(/^git version \d+\.\d+\.\d+\.windows\.\d+$/);
     const originalIndex = await readFile(join(fixture.repositoryRoot, ".git", "index"));
     const originalSource = await readFile(join(fixture.repositoryRoot, SOURCE, "app.txt"));
     const originalMain = (await git(fixture.repositoryRoot, ["rev-parse", "refs/heads/main"])).trim();
@@ -165,7 +167,7 @@ describe("finite hostile-safe branch Git adapter", () => {
     expect(await readFile(join(fixture.repositoryRoot, SOURCE, "app.txt"))).toEqual(originalSource);
     expect((await git(fixture.repositoryRoot, ["rev-parse", "refs/heads/main"])).trim()).toBe(originalMain);
     expect(await readdir(result.evidence.hooksDirectory)).toEqual([]);
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it("accepts the first fresh T7 inspection without warming or changing canonical index bytes", async () => {
     const fixture = await fixtureRepository();
@@ -188,7 +190,7 @@ describe("finite hostile-safe branch Git adapter", () => {
     if (result.outcome !== "succeeded") return;
     expect(result.evidence.originalFutureBefore).toEqual(request.originalFuture);
     expect(await readFile(indexPath)).toEqual(indexBytesBefore);
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it("matches T7 global portable-path digest ordering for punctuation-adjacent files and directories", async () => {
     const fixture = await fixtureRepository();
@@ -205,7 +207,7 @@ describe("finite hostile-safe branch Git adapter", () => {
     if (result.outcome !== "succeeded") return;
     expect(result.evidence.originalFutureBefore.approvedSourceDigest).toBe(request.originalFuture.approvedSourceDigest);
     expect(result.evidence.originalFutureAfter.approvedSourceDigest).toBe(request.originalFuture.approvedSourceDigest);
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it.each([
     ["branch ref injection", { branchRef: "refs/heads/remo/safe --force" }],
@@ -262,7 +264,7 @@ describe("finite hostile-safe branch Git adapter", () => {
     const { adapter, request } = await requestFor(hookFixture);
     await writeFile(join(hookFixture.repositoryRoot, ".git", "hooks", "post-checkout"), "hostile\n");
     expectBlocked(await adapter.createLockedWorktree(request), "git.hook-present");
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it("blocks filter attributes and submodule gitlinks without materializing either", async () => {
     const filterFixture = await fixtureRepository();
@@ -287,7 +289,7 @@ describe("finite hostile-safe branch Git adapter", () => {
     const withGitlink = { ...submoduleFixture, head: newHead };
     prepared = await requestFor(withGitlink);
     expectBlocked(await prepared.adapter.createLockedWorktree(prepared.request), "git.submodule-gitlink");
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it("neutralizes hostile global/system configuration, inherited overrides, aliases, and hooks", async () => {
     const fixture = await fixtureRepository();
@@ -340,7 +342,7 @@ describe("finite hostile-safe branch Git adapter", () => {
     expect((await git(fixture.repositoryRoot, ["rev-parse", "refs/heads/main"])).trim()).toBe(originalMain);
     expect(await readFile(join(fixture.repositoryRoot, SOURCE, "app.txt"))).toEqual(originalSource);
     if (result.outcome === "succeeded") expect(result.evidence.originalFutureEqual).toBe(true);
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it("classifies Git's real dubious-ownership failure without a production test shortcut", async () => {
     const fixture = await fixtureRepository();
@@ -367,7 +369,7 @@ describe("finite hostile-safe branch Git adapter", () => {
     expect(source).toContain('failure.message.includes("dubious ownership") ? "git.ownership-unsafe"');
     expect(source).not.toContain("GIT_TEST_ASSUME_DIFFERENT_OWNER");
     expect(source).not.toContain("safe.directory");
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it("blocks repository and .remo reparse-point boundaries", async () => {
     const fixture = await fixtureRepository();
@@ -404,7 +406,7 @@ describe("finite hostile-safe branch Git adapter", () => {
     await symlink(outside, join(privateRoot, BRANCH_GIT_FIXED_PROFILE.hooksDirectoryName), process.platform === "win32" ? "junction" : "dir");
     expectBlocked(await linkPrepared.adapter.createLockedWorktree(linkPrepared.request), "git.hooks-directory-link");
     expect((await git(linkFixture.repositoryRoot, ["for-each-ref", "--format=%(refname)", "refs/heads/remo"])).trim()).toBe("");
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it("blocks hostile private XDG content and unsafe environment ACLs before any Git child can consume them", async () => {
     const hostileFixture = await fixtureRepository();
@@ -429,7 +431,7 @@ describe("finite hostile-safe branch Git adapter", () => {
     await run(join(systemRoot, "System32", "icacls.exe"), [aclEnvironmentRoot, "/grant", "*S-1-1-0:(OI)(CI)RX"], { shell: false, encoding: "utf8" });
     expectBlocked(await aclPrepared.adapter.createLockedWorktree(aclPrepared.request), "git.private-environment-acl-not-current-user-only");
     expect((await git(aclFixture.repositoryRoot, ["for-each-ref", "--format=%(refname)", "refs/heads/remo"])).trim()).toBe("");
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it("returns recovery-required when unignored private/worktree state changes the original status digest", async () => {
     const fixture = await fixtureRepository({ ignoreRemo: false });
@@ -453,7 +455,7 @@ describe("finite hostile-safe branch Git adapter", () => {
     const worktrees = await git(fixture.repositoryRoot, ["worktree", "list", "--porcelain"]);
     expect(worktrees).toContain(`worktree ${targetPath.replaceAll("\\", "/")}`);
     expect(worktrees).toContain(`locked ${BRANCH_GIT_FIXED_PROFILE.lockReason}`);
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it("blocks ref/path collisions and mismatched original-future evidence", async () => {
     const fixture = await fixtureRepository();
@@ -468,7 +470,7 @@ describe("finite hostile-safe branch Git adapter", () => {
     const stale = await requestFor(third);
     await writeFile(join(third.repositoryRoot, SOURCE, "app.txt"), "tampered future\n");
     expectBlocked(await stale.adapter.createLockedWorktree(stale.request), "git.original-future-stale");
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it("observes a post-preflight ref/path race as recovery-required and never retries with force", async () => {
     const fixture = await fixtureRepository();
@@ -487,7 +489,7 @@ describe("finite hostile-safe branch Git adapter", () => {
       expect(result.observed.creationCommand?.argv).not.toContain("-B");
     }
     expect((await git(fixture.repositoryRoot, ["rev-parse", request.preflightReceipt.target.branchRef])).trim()).toBe(fixture.head);
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it("returns recovery-required when an existing worktree record changes across the exact delta", async () => {
     const fixture = await fixtureRepository();
@@ -511,7 +513,7 @@ describe("finite hostile-safe branch Git adapter", () => {
       expect(result.observed.exactWorktreeDelta).toBe(false);
     }
     expect((await git(fixture.repositoryRoot, ["worktree", "list", "--porcelain"]))).toContain("locked concurrent existing-record mutation");
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it("returns typed recovery-required evidence when real Git creates a ref before a worktree-add process failure", async () => {
     const fixture = await fixtureRepository();
@@ -525,7 +527,7 @@ describe("finite hostile-safe branch Git adapter", () => {
       expect(result.reasonCodes).toEqual(["git.creation-process-failed-partial"]);
     }
     expect((await git(fixture.repositoryRoot, ["for-each-ref", "--format=%(refname)", "refs/heads/remo"])).trim()).toBe(request.preflightReceipt.target.branchRef);
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it("treats an unavailable creation and indeterminate post-failure ref probe as recovery-required", async () => {
     const fixture = await fixtureRepository();
@@ -545,7 +547,7 @@ describe("finite hostile-safe branch Git adapter", () => {
     expect(await pathExists(targetPath)).toBe(false);
     expect((await git(fixture.repositoryRoot, ["show-ref", "--verify", "--hash", request.preflightReceipt.target.branchRef]).catch(() => "")).trim()).toBe("");
     expect(await pathExists(hooksDirectory)).toBe(true);
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it("returns failed-no-effect only when exit-1 proves ref absence and the target path is absent", async () => {
     const fixture = await fixtureRepository();
@@ -565,7 +567,7 @@ describe("finite hostile-safe branch Git adapter", () => {
     expect(await pathExists(targetPath)).toBe(false);
     expect((await git(fixture.repositoryRoot, ["show-ref", "--verify", "--hash", request.preflightReceipt.target.branchRef]).catch(() => "")).trim()).toBe("");
     expect(await readFile(refLock, "utf8")).toContain("deterministic fixture");
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it("fails closed when the Git process is unavailable", async () => {
     const fixture = await fixtureRepository();

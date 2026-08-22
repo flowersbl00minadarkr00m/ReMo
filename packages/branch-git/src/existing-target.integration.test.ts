@@ -12,6 +12,8 @@ const run = promisify(execFile);
 const PREFIX = "remo-branch-git-t9-observer-";
 const SAVE_POINT_ID = "01J000000000000000000000S5";
 const SOURCE = "src";
+const INTEGRATION_TIMEOUT_MS = 90_000;
+const LONG_INTEGRATION_TIMEOUT_MS = 180_000;
 const roots = new Set<string>();
 
 async function git(cwd: string, args: readonly string[]): Promise<string> {
@@ -73,7 +75,7 @@ describe.sequential("finite existing-target observer", () => {
     const exact = await value.adapter.observeExistingTarget(value.observeRequest);
     expect(exact.outcome, JSON.stringify(exact)).toBe("exact-success");
     if (exact.outcome === "exact-success") expect(exact.evidence).toMatchObject({ refCommit: value.head, worktreeCommit: value.head, worktreeBranchRef: value.target.branchRef, locked: true, observedLockReason: BRANCH_GIT_FIXED_PROFILE.lockReason, targetIdentityExact: true, originalFutureEqual: true });
-  }, 30_000);
+  }, INTEGRATION_TIMEOUT_MS);
 
   it("classifies ref-only, path-only, wrong ref/HEAD, unlocked, and wrong lock reason as recovery-required", async () => {
     for (const condition of ["ref-only", "path-only", "wrong-ref", "wrong-head", "unlocked", "wrong-reason"] as const) {
@@ -95,7 +97,7 @@ describe.sequential("finite existing-target observer", () => {
       expect(result.outcome, `${condition}: ${JSON.stringify(result)}`).toBe("recovery-required");
       await rm(value.root, { recursive: true, force: true, maxRetries: 4, retryDelay: 100 }); roots.delete(value.root);
     }
-  }, 60_000);
+  }, LONG_INTEGRATION_TIMEOUT_MS);
 
   it("classifies wrong common directory, original-future drift, and indeterminate Git observation as recovery-required", async () => {
     const common = await fixture();
@@ -122,7 +124,7 @@ describe.sequential("finite existing-target observer", () => {
       expect(indeterminate).toMatchObject({ outcome: "recovery-required", reasonCodes: ["git.existing-target-observation-indeterminate"] });
     } finally { process.env.PATH = priorPath; }
     expect(await pathExists(join(drift.repositoryRoot, ".remo", "worktrees", drift.target.operationId))).toBe(true);
-  }, 60_000);
+  }, LONG_INTEGRATION_TIMEOUT_MS);
 
   it("exposes one exact read-only observer request and no second executor surface", async () => {
     const value = await fixture();

@@ -1,4 +1,4 @@
-import { chmod, mkdtemp, mkdir, readFile, readdir, stat, symlink, writeFile } from "node:fs/promises";
+import { chmod, mkdtemp, mkdir, readFile, readdir, realpath, stat, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { execFile } from "node:child_process";
@@ -26,7 +26,7 @@ async function fixtureRepository(): Promise<string> {
   await run("git", ["config", "user.name", "Fixture"], { cwd: repositoryRoot, shell: false });
   await run("git", ["add", "."], { cwd: repositoryRoot, shell: false });
   await run("git", ["commit", "-m", "fixture"], { cwd: repositoryRoot, shell: false });
-  return repositoryRoot;
+  return realpath(repositoryRoot);
 }
 
 describe("read-only allowlisted Git evidence", () => {

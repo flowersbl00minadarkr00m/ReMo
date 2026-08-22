@@ -41,6 +41,6 @@ const service = createBranchOrchestrationService({
   readIssuedReceipt: (digest) => digest === initial.receipt.digest ? initial.receipt : undefined,
   injectCrash(point) { if (point === crashPoint) process.exit(86); },
 });
-await service.confirm({ savePointId: SAVE_ID, confirm: true, preflightDigest: initial.receipt.digest, expectedSavePointRevision: 1, displayLabel: "S-005 abrupt child alternate", idempotencyKey: "s005-abrupt-child" });
+await service.confirm({ savePointId: SAVE_ID, confirm: true, preflightDigest: initial.receipt.digest, expectedSavePointRevision: 1, displayLabel: "S-005 abrupt child alternate", idempotencyKey: "s005-abrupt-child" }); // gitleaks:allow — fixed test identifier
 repository.close();
 process.exit(67);

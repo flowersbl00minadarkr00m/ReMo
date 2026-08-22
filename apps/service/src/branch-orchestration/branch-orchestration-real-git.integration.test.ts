@@ -1,5 +1,5 @@
 import { execFile, spawn } from "node:child_process";
-import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, realpath, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -33,7 +33,7 @@ async function abruptChild(root: string, sourceCommit: string, point: string): P
 }
 
 async function fixture() {
-  const root = await mkdtemp(join(tmpdir(), "remo-t9-real-service-"));
+  const root = await realpath(await mkdtemp(join(tmpdir(), "remo-t9-real-service-")));
   roots.push(root);
   await mkdir(join(root, "src"), { recursive: true });
   await writeFile(join(root, ".gitignore"), ".remo/\n");
