@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@remo/evidence-git": "workspace:*",
-    "@types/node": "24.10.1",
+    "@types/node": "26.2.0",
     "typescript": "5.9.3",
     "vitest": "4.1.11"
   }

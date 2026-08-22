@@ -18,7 +18,7 @@
     "rrweb": "2.0.0-alpha.20"
   },
   "devDependencies": {
-    "@types/node": "24.10.1",
+    "@types/node": "26.2.0",
     "@types/pngjs": "6.0.5",
     "typescript": "5.9.3",
     "vitest": "4.1.11"
