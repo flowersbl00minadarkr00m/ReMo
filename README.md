@@ -6,6 +6,10 @@ ReMo gives AI-assisted UI work trustworthy save points you can inspect, replay, 
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+## Series context
+
+ReMo is the working proof behind [*Feedbackmaxxing*](https://henryflowers45.substack.com/p/feedbackmaxxing) ([LinkedIn version](https://www.linkedin.com/posts/henry-flowers_feedbackmaxxing-activity-7496569159942643712-Fane)), part of the *Looping in the Human* series.
+
 ![ReMo hosted demonstration showing a ten-turn history](docs/assets/hero.png)
 
 ## Features
