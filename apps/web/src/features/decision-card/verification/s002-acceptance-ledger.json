@@ -1,0 +1,355 @@
+{
+  "event": "s002.structured-decision-evidence.fixture-verification",
+  "occurredAt": "2026-08-19T05:29:44.720Z",
+  "runtime": {
+    "truthLabel": "observed",
+    "node": "v24.17.0",
+    "playwright": "1.62.1",
+    "origin": "http://127.0.0.1:4175",
+    "webRoot": "apps/web/dist"
+  },
+  "acceptanceBoundary": {
+    "truthLabel": "verified",
+    "claim": "S-002 fixture verification passed; this is not production acceptance."
+  },
+  "evidence": {
+    "candidate": {
+      "truthLabel": "observed",
+      "sourcePointer": "production candidate UI and authenticated loopback mutation before explicit promotion",
+      "recordDigest": "sha256:826f7f46653079266d868e2a0274a36949c3d7a9aafbf7d00e236a461224afe4",
+      "responseLossCommitted": true,
+      "samePageRetryRecovered": true,
+      "reloadRecovered": true,
+      "duplicateRevisionCount": 1,
+      "restartDurable": true,
+      "captures": [
+        {
+          "file": "s002-candidate-turn4-320.png",
+          "sha256": "2fa5a04af8bdb382ceebeb9d92ae08bbe4f063c139351e8cc98cfa71e967a814",
+          "byteSize": 185443,
+          "viewport": {
+            "width": 320,
+            "height": 720
+          },
+          "dimensions": {
+            "clientWidth": 320,
+            "scrollWidth": 320
+          }
+        },
+        {
+          "file": "s002-candidate-turn4-390.png",
+          "sha256": "45bc098e8e660dcb9f5c1eb59cd736a5a6220fa888f206a0b8e93b4a5bdf43e3",
+          "byteSize": 200579,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "dimensions": {
+            "clientWidth": 390,
+            "scrollWidth": 390
+          }
+        },
+        {
+          "file": "s002-candidate-turn4-768.png",
+          "sha256": "345706e09bee2af46b6c7bb0d1d054af4969188cdba3ea844bbd1ff54bd09dd8",
+          "byteSize": 212783,
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "dimensions": {
+            "clientWidth": 768,
+            "scrollWidth": 768
+          }
+        },
+        {
+          "file": "s002-candidate-turn4-1024.png",
+          "sha256": "0c0af8beb31b2051c4fe653dad65005647fec2f82d55cd81da1f283f1df44f32",
+          "byteSize": 264610,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "dimensions": {
+            "clientWidth": 1024,
+            "scrollWidth": 1024
+          }
+        },
+        {
+          "file": "s002-candidate-turn4-1440.png",
+          "sha256": "da75a95afc99fa25655d3aea00e9e824b7221acd03f65bc44f57d122130f747a",
+          "byteSize": 248055,
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "dimensions": {
+            "clientWidth": 1440,
+            "scrollWidth": 1440
+          }
+        }
+      ],
+      "failures": {
+        "consoleErrors": [],
+        "observedUnknownDecisionReads": [],
+        "navigationMediaCancellations": [],
+        "expectedResponseLosses": [
+          {
+            "requestId": "request-6",
+            "method": "POST",
+            "url": "http://127.0.0.1:4175/api/candidates/01J00000000000000000000T04/decision",
+            "errorText": "net::ERR_FAILED"
+          }
+        ],
+        "expectedResponseLossConsoleErrors": [
+          "Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:4175/api/candidates/01J00000000000000000000T04/decision"
+        ],
+        "pageErrors": [],
+        "requestErrors": [],
+        "unexpectedRequests": []
+      }
+    },
+    "durable": {
+      "truthLabel": "observed",
+      "sourcePointer": "VS-001 ten-save fixture extended through production storage/service/replay seams",
+      "turn4RevisionCount": 2,
+      "turn8RevisionCount": 3,
+      "inferredConfirmed": true,
+      "reconstructed": true,
+      "corrected": true,
+      "unknown": true,
+      "turn8OwnerUnknown": true,
+      "turn8UncertaintyUnknown": true,
+      "exactNavigationMediaCancellations": 0,
+      "exactUnknownDecisionReads": 5,
+      "restartDurable": true,
+      "manifestRevisions": {
+        "turn4": {
+          "revision": 3,
+          "predecessorRevision": 2,
+          "manifestDigest": "sha256:69349bcf9c9cc3453a10f07c73f61cbdc51c001c1d30c48f049c4c98021a6de9",
+          "predecessorManifestDigest": "sha256:8b24a700a46ec0c280571c2fe662c55d3d60d65ff41099b20d5edc82a72fa3d5"
+        },
+        "turn8": {
+          "revision": 4,
+          "predecessorRevision": 3,
+          "manifestDigest": "sha256:677bc010fd4271503dfbbdf34929276b3ffcf213bb52ac6f8506b70184e61bcb",
+          "predecessorManifestDigest": "sha256:39794714a4c4e3a0b13d1a78bae05b14e5074b4b2ee292a5dba51e71d0547ea4"
+        }
+      },
+      "captures": [
+        {
+          "file": "s002-turn4-320.png",
+          "sha256": "c0c6988ff44646efdc946977587a1ee49c2e375c607bef2d6475b5d1d9f3db77",
+          "byteSize": 179639,
+          "viewport": {
+            "width": 320,
+            "height": 720
+          },
+          "dimensions": {
+            "clientWidth": 320,
+            "scrollWidth": 320
+          }
+        },
+        {
+          "file": "s002-turn8-320.png",
+          "sha256": "5c58069576d4f5a69ea35098dd2afbaea186b42ceb4f199bb474152c44c18569",
+          "byteSize": 204537,
+          "viewport": {
+            "width": 320,
+            "height": 720
+          },
+          "dimensions": {
+            "clientWidth": 320,
+            "scrollWidth": 320
+          }
+        },
+        {
+          "file": "s002-turn7-320.png",
+          "sha256": "5e4062bfe661ed147f63e88ede81b0ba75d6c331f02962c21a5193d374f47c35",
+          "byteSize": 113876,
+          "viewport": {
+            "width": 320,
+            "height": 720
+          },
+          "dimensions": {
+            "clientWidth": 320,
+            "scrollWidth": 320
+          }
+        },
+        {
+          "file": "s002-turn4-390.png",
+          "sha256": "f302602e353d1560833fee641bf9d8f0d4f293adc4bb706af629c05332d032c9",
+          "byteSize": 187509,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "dimensions": {
+            "clientWidth": 390,
+            "scrollWidth": 390
+          }
+        },
+        {
+          "file": "s002-turn8-390.png",
+          "sha256": "b89ee22ddeac12f3ebd182e020c16402735b27a6def11fd1e5435bdbe16c2745",
+          "byteSize": 210665,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "dimensions": {
+            "clientWidth": 390,
+            "scrollWidth": 390
+          }
+        },
+        {
+          "file": "s002-turn7-390.png",
+          "sha256": "94d36f3db177a22f9426d400ec7bde11680e9aac5e0f1e2ba87df6108be138bb",
+          "byteSize": 119527,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "dimensions": {
+            "clientWidth": 390,
+            "scrollWidth": 390
+          }
+        },
+        {
+          "file": "s002-turn4-768.png",
+          "sha256": "0944075e1a586a094a432d4da8f39b024e7f7d00260be895dcd2c0a23984140b",
+          "byteSize": 211000,
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "dimensions": {
+            "clientWidth": 768,
+            "scrollWidth": 768
+          }
+        },
+        {
+          "file": "s002-turn8-768.png",
+          "sha256": "288618e3c537797daf90572245bda0d09f08d60d96635cba784e094d637fa1f3",
+          "byteSize": 231263,
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "dimensions": {
+            "clientWidth": 768,
+            "scrollWidth": 768
+          }
+        },
+        {
+          "file": "s002-turn7-768.png",
+          "sha256": "d459f80efa654223f05a4a6420d020dfe4d5ed60e9ea57a8dca1b56809fd1085",
+          "byteSize": 151455,
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "dimensions": {
+            "clientWidth": 768,
+            "scrollWidth": 768
+          }
+        },
+        {
+          "file": "s002-turn4-1024.png",
+          "sha256": "3fda26877b7b0e262cdaacd4e6fd4e275f442ccd51e5b7e37fd4559fb1104cc0",
+          "byteSize": 227989,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "dimensions": {
+            "clientWidth": 1024,
+            "scrollWidth": 1024
+          }
+        },
+        {
+          "file": "s002-turn8-1024.png",
+          "sha256": "96fb805d3113ee6745b110b8fb062f2ec1f4ae9f2ef382c2b9e52b0abf39aa48",
+          "byteSize": 245650,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "dimensions": {
+            "clientWidth": 1024,
+            "scrollWidth": 1024
+          }
+        },
+        {
+          "file": "s002-turn7-1024.png",
+          "sha256": "a16e0c29d38e5cd804c382dba50a38ea2345f2a77b1eb2c26dbb7c97060c52c8",
+          "byteSize": 157310,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "dimensions": {
+            "clientWidth": 1024,
+            "scrollWidth": 1024
+          }
+        },
+        {
+          "file": "s002-turn4-1440.png",
+          "sha256": "a23f5a2ceb83eea3c5f7bae0a2a0e0188aa80b60349bec2c6b03fab38fb5afff",
+          "byteSize": 242651,
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "dimensions": {
+            "clientWidth": 1440,
+            "scrollWidth": 1440
+          }
+        },
+        {
+          "file": "s002-turn8-1440.png",
+          "sha256": "c006b801994279a4cf9e31177e5def3f66d0aefbe28e56df2c432ed49a6505e6",
+          "byteSize": 269768,
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "dimensions": {
+            "clientWidth": 1440,
+            "scrollWidth": 1440
+          }
+        },
+        {
+          "file": "s002-turn7-1440.png",
+          "sha256": "c645df896cd4be5469bdaf40c5d687b74f8150c76d3870945f529e47d25b9ebb",
+          "byteSize": 182659,
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "dimensions": {
+            "clientWidth": 1440,
+            "scrollWidth": 1440
+          }
+        }
+      ],
+      "failures": {
+        "consoleErrors": [],
+        "observedUnknownDecisionReads": [
+          "http://127.0.0.1:4175/api/save-points/01J00000000000000000000S07/decision",
+          "http://127.0.0.1:4175/api/save-points/01J00000000000000000000S07/decision",
+          "http://127.0.0.1:4175/api/save-points/01J00000000000000000000S07/decision",
+          "http://127.0.0.1:4175/api/save-points/01J00000000000000000000S07/decision",
+          "http://127.0.0.1:4175/api/save-points/01J00000000000000000000S07/decision"
+        ],
+        "navigationMediaCancellations": [],
+        "expectedResponseLosses": [],
+        "expectedResponseLossConsoleErrors": [],
+        "pageErrors": [],
+        "requestErrors": [],
+        "unexpectedRequests": []
+      }
+    }
+  }
+}

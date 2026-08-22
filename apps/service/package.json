@@ -1,0 +1,26 @@
+{
+  "name": "@remo/service",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run --maxWorkers=4 --exclude src/branch-orchestration/branch-orchestration-real-git.integration.test.ts --exclude src/promotion/local-application.acceptance.test.ts --exclude src/support/actual-ui.e2e.test.ts --exclude src/comparisons/local-application-comparison.test.ts --exclude src/save-points/durable-local-application.test.ts --exclude src/acceptance-sequence/ten-save.e2e.test.ts && vitest run src/branch-orchestration/branch-orchestration-real-git.integration.test.ts src/promotion/local-application.acceptance.test.ts src/support/actual-ui.e2e.test.ts src/comparisons/local-application-comparison.test.ts src/save-points/durable-local-application.test.ts src/acceptance-sequence/ten-save.e2e.test.ts --maxWorkers=1 --no-file-parallelism",
+    "prestart:fixture": "pnpm --dir ../web build",
+    "start:fixture": "tsx src/promotion/local-application.ts"
+  },
+  "dependencies": {
+    "@remo/branch-git": "workspace:*",
+    "@remo/domain": "workspace:*",
+    "@remo/evidence-git": "workspace:*",
+    "@remo/evidence-langfuse": "workspace:*",
+    "@remo/evidence-verification": "workspace:*",
+    "@remo/storage-local": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "playwright": "1.62.1",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vitest": "4.0.15"
+  }
+}

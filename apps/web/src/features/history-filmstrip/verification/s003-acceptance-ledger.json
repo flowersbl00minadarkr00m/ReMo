@@ -1,0 +1,275 @@
+{
+  "event": "s003.lineage-filmstrip.fixture-verification",
+  "occurredAt": "2026-08-20T12:04:46.163Z",
+  "runtime": {
+    "truthLabel": "observed",
+    "sourcePointer": "process.version, installed Playwright package metadata, and exact verifier constants",
+    "node": "v24.17.0",
+    "playwright": "1.62.1",
+    "origin": "http://127.0.0.1:4175",
+    "productionWebRoot": "apps/web/dist"
+  },
+  "acceptanceBoundary": {
+    "truthLabel": "verified",
+    "sourcePointer": "The three separately sourced evidence groups below",
+    "claim": "S-003 fixture verification passed; combined fixture evidence is not production acceptance."
+  },
+  "evidence": {
+    "productionTenSave": {
+      "truthLabel": "observed",
+      "sourcePointer": "runTenSaveSequence(ROOT) project opened through the production web build at 127.0.0.1:4175; GET /api/history and replay-route safe bootstrap",
+      "fixture": {
+        "durableCount": 10,
+        "activeCount": 9,
+        "tombstoneSavePointId": "01J00000000000000000000S06",
+        "restartSelection": "01J00000000000000000000S09"
+      },
+      "joinedTrust": {
+        "savePointId": "01J00000000000000000000S04",
+        "turnId": "01J00000000000000000000T04",
+        "revision": 1,
+        "manifestDigest": "sha256:2bb90ed939e8a9894c16a52faf46df1dce9d529c12c1975622f1e254987f8f39",
+        "integrity": "complete",
+        "fidelity": "editable-eligible",
+        "completeness": "complete",
+        "editability": "eligible",
+        "replayAvailability": "available"
+      },
+      "accessibility": {
+        "pattern": "horizontal single-select listbox",
+        "arrowSelection": "pass",
+        "homeEnd": "pass",
+        "tombstoneAnnounced": "pass"
+      },
+      "performance": {
+        "profile": "production build; ten slots loaded once; 30 post-warm active selections; no CPU throttle",
+        "method": "nearest-rank",
+        "thresholdMs": 200,
+        "samplesMs": [
+          58.600000001490116,
+          73.29999999701977,
+          62.399999998509884,
+          56.900000005960464,
+          58.5,
+          67.90000000596046,
+          60.5,
+          59.399999998509884,
+          61.5,
+          74.60000000149012,
+          68.89999999850988,
+          65.10000000149012,
+          59.70000000298023,
+          71.60000000149012,
+          63.5,
+          66.79999999701977,
+          58.899999998509884,
+          61.19999999552965,
+          55.30000000447035,
+          67,
+          63.100000001490116,
+          74.39999999850988,
+          73.29999999701977,
+          68.60000000149012,
+          67.5,
+          63.600000001490116,
+          59.100000001490116,
+          70.80000000447035,
+          61.70000000298023,
+          70.10000000149012
+        ],
+        "p95Ms": 74.39999999850988
+      },
+      "immutability": {
+        "before": {
+          "git": {
+            "branch": "main",
+            "head": "4e99287a60403eb891419d453f57fdb7c680533e",
+            "tree": "b89f35abc43287d30d2f3e0893f1ea318052ef8f",
+            "status": "D  packages/test-fixtures/vs001-ui/src/scenario-confirmation-focus.tsx\nD  packages/test-fixtures/vs001-ui/src/scenario-desktop-detail-layout.css\nD  packages/test-fixtures/vs001-ui/src/scenario-evidence-disclosure.tsx\nD  packages/test-fixtures/vs001-ui/src/scenario-integrity-region.tsx\nD  packages/test-fixtures/vs001-ui/src/scenario-mobile-actions.css\nD  packages/test-fixtures/vs001-ui/src/scenario-mobile-stop.tsx\nD  packages/test-fixtures/vs001-ui/src/scenario-privacy-quarantine.tsx\nD  packages/test-fixtures/vs001-ui/src/scenario-responsive-panel.css\nD  packages/test-fixtures/vs001-ui/src/scenario-retention-group.tsx\nD  packages/test-fixtures/vs001-ui/src/scenario-summary-hierarchy.tsx\nD  packages/test-fixtures/vs001-ui/src/scenario-trace-authority.tsx\n?? tsconfig.base.json"
+          },
+          "gitDigest": "f3f3d3b4e1937b36422a62e35a08b86cdf9c6c9fe2a8e5a079c3c2d2acde755b",
+          "sourceDigest": "b579a2ceaa6a5f1cc2a0602ae5a8bffd08c49c2215c77ed32093595c0f2c440e",
+          "lineageDigest": "2f3332cec94017920780b2c3fb8df85a92915b981e25f3f96bf703a33ed23c57"
+        },
+        "after": {
+          "git": {
+            "branch": "main",
+            "head": "4e99287a60403eb891419d453f57fdb7c680533e",
+            "tree": "b89f35abc43287d30d2f3e0893f1ea318052ef8f",
+            "status": "D  packages/test-fixtures/vs001-ui/src/scenario-confirmation-focus.tsx\nD  packages/test-fixtures/vs001-ui/src/scenario-desktop-detail-layout.css\nD  packages/test-fixtures/vs001-ui/src/scenario-evidence-disclosure.tsx\nD  packages/test-fixtures/vs001-ui/src/scenario-integrity-region.tsx\nD  packages/test-fixtures/vs001-ui/src/scenario-mobile-actions.css\nD  packages/test-fixtures/vs001-ui/src/scenario-mobile-stop.tsx\nD  packages/test-fixtures/vs001-ui/src/scenario-privacy-quarantine.tsx\nD  packages/test-fixtures/vs001-ui/src/scenario-responsive-panel.css\nD  packages/test-fixtures/vs001-ui/src/scenario-retention-group.tsx\nD  packages/test-fixtures/vs001-ui/src/scenario-summary-hierarchy.tsx\nD  packages/test-fixtures/vs001-ui/src/scenario-trace-authority.tsx\n?? tsconfig.base.json"
+          },
+          "gitDigest": "f3f3d3b4e1937b36422a62e35a08b86cdf9c6c9fe2a8e5a079c3c2d2acde755b",
+          "sourceDigest": "b579a2ceaa6a5f1cc2a0602ae5a8bffd08c49c2215c77ed32093595c0f2c440e",
+          "lineageDigest": "2f3332cec94017920780b2c3fb8df85a92915b981e25f3f96bf703a33ed23c57"
+        },
+        "gitUnchanged": true,
+        "sourceUnchanged": true,
+        "lineageUnchanged": true
+      },
+      "failures": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestErrors": [],
+        "requestCancellations": [],
+        "unexpectedRequests": []
+      },
+      "tombstoneNoFetch": true,
+      "withinLineageNavigation": true,
+      "restartStable": true,
+      "captures": [
+        {
+          "file": "apps/web/src/features/history-filmstrip/verification/s003-primary-320.png",
+          "bytes": 141780,
+          "sha256": "f3a732905a1e5eb0f105eaa0102e0ae0083f5c48bf08e39eabc3b7295550dc75",
+          "overflow": {
+            "clientWidth": 320,
+            "scrollWidth": 320
+          }
+        },
+        {
+          "file": "apps/web/src/features/history-filmstrip/verification/s003-tombstone-320.png",
+          "bytes": 71737,
+          "sha256": "dc11cd9dd654958114b2d3e09f82b13b418578a1e4eca57dcef1505972adaaff",
+          "overflow": {
+            "clientWidth": 320,
+            "scrollWidth": 320
+          }
+        },
+        {
+          "file": "apps/web/src/features/history-filmstrip/verification/s003-degraded-320.png",
+          "bytes": 24314,
+          "sha256": "33f8046e2d0f70cb8dfb6bc6ff6c6651ec802d07f4658bf49f115333af6a240e",
+          "overflow": {
+            "clientWidth": 320,
+            "scrollWidth": 320
+          }
+        },
+        {
+          "file": "apps/web/src/features/history-filmstrip/verification/s003-primary-390.png",
+          "bytes": 146752,
+          "sha256": "1b9c6a16d094821049badbe332027004a2f32dd63629288042da96c4885b929e",
+          "overflow": {
+            "clientWidth": 390,
+            "scrollWidth": 390
+          }
+        },
+        {
+          "file": "apps/web/src/features/history-filmstrip/verification/s003-tombstone-390.png",
+          "bytes": 73758,
+          "sha256": "90f9d300a65523e3fa3e36cf1a7b10dde6ff4eafd4c02f11d117f7917cd64f82",
+          "overflow": {
+            "clientWidth": 390,
+            "scrollWidth": 390
+          }
+        },
+        {
+          "file": "apps/web/src/features/history-filmstrip/verification/s003-degraded-390.png",
+          "bytes": 24860,
+          "sha256": "e15cb3f09f8557e623bbf2ca2c4ac31fceaeaa6d83fb93ab4763d6c56c346e71",
+          "overflow": {
+            "clientWidth": 390,
+            "scrollWidth": 390
+          }
+        },
+        {
+          "file": "apps/web/src/features/history-filmstrip/verification/s003-primary-768.png",
+          "bytes": 178769,
+          "sha256": "900eb6a98bd6e958e886ac91a9954300462fe234747c246ee77c5d4ddb5d968c",
+          "overflow": {
+            "clientWidth": 768,
+            "scrollWidth": 768
+          }
+        },
+        {
+          "file": "apps/web/src/features/history-filmstrip/verification/s003-tombstone-768.png",
+          "bytes": 79037,
+          "sha256": "a6bf6785015b7d8df70d8353c4f4b2ea7be21f631edc64aa511febe02ace091c",
+          "overflow": {
+            "clientWidth": 768,
+            "scrollWidth": 768
+          }
+        },
+        {
+          "file": "apps/web/src/features/history-filmstrip/verification/s003-degraded-768.png",
+          "bytes": 27570,
+          "sha256": "2a591e74f93c60b771612c851c00866f1e57ae9d4821390182b3d3773aaf3c1e",
+          "overflow": {
+            "clientWidth": 768,
+            "scrollWidth": 768
+          }
+        },
+        {
+          "file": "apps/web/src/features/history-filmstrip/verification/s003-primary-1024.png",
+          "bytes": 193712,
+          "sha256": "06675633b56110efc6a7597a9454b5b520687c403d0eb784c01928f37efbc292",
+          "overflow": {
+            "clientWidth": 1024,
+            "scrollWidth": 1024
+          }
+        },
+        {
+          "file": "apps/web/src/features/history-filmstrip/verification/s003-tombstone-1024.png",
+          "bytes": 89655,
+          "sha256": "27ae4b46fd65a022c5ed5f7943a57d175c7e19504560dee06dbe786666fd944b",
+          "overflow": {
+            "clientWidth": 1024,
+            "scrollWidth": 1024
+          }
+        },
+        {
+          "file": "apps/web/src/features/history-filmstrip/verification/s003-degraded-1024.png",
+          "bytes": 35761,
+          "sha256": "3f38738972e52d96df0d02e9bb544dbd45b04e4ecf9062810db77c26c0e8e3de",
+          "overflow": {
+            "clientWidth": 1024,
+            "scrollWidth": 1024
+          }
+        },
+        {
+          "file": "apps/web/src/features/history-filmstrip/verification/s003-primary-1440.png",
+          "bytes": 213601,
+          "sha256": "313a8bba4fd8c123fd5bb700d279960fa5dc82cb85bee13a02967e5c8a90c363",
+          "overflow": {
+            "clientWidth": 1440,
+            "scrollWidth": 1440
+          }
+        },
+        {
+          "file": "apps/web/src/features/history-filmstrip/verification/s003-tombstone-1440.png",
+          "bytes": 94288,
+          "sha256": "ee6db6f12188390d9b245d28783085f98c42a9dfa6623188557fdb786a3e5d0d",
+          "overflow": {
+            "clientWidth": 1440,
+            "scrollWidth": 1440
+          }
+        },
+        {
+          "file": "apps/web/src/features/history-filmstrip/verification/s003-degraded-1440.png",
+          "bytes": 37843,
+          "sha256": "e990635b224fd6bcca8af225e606f8adbe79a30ddab3c37e52c949afab086fcd",
+          "overflow": {
+            "clientWidth": 1440,
+            "scrollWidth": 1440
+          }
+        }
+      ]
+    },
+    "simulatedAlternateLineage": {
+      "truthLabel": "simulated",
+      "sourcePointer": "Playwright route interception for GET /api/history with one verified branch-lineage record in verify-s003.mjs",
+      "rootSavePointId": "01J00000000000000000000S04",
+      "alternateRootEvidenceSavePointId": "01J00000000000000000000S04",
+      "originalCount": 10,
+      "alternateCount": 1,
+      "boundaryNavigation": "pass"
+    },
+    "seededReplayRestart": {
+      "truthLabel": "simulated",
+      "sourcePointer": "startLocalApplication(replayFixtureRoot, seedImplementationFixture=true), seeded candidate promotion, unchanged T3 EvidenceMediaPanel on 127.0.0.1:4175/4176",
+      "restartCommand": {
+        "command": "restart",
+        "acknowledgedMs": 9.100000001490116
+      }
+    }
+  }
+}

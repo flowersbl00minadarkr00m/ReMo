@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": ["DOM", "DOM.Iterable", "ES2024"],
+    "noEmit": true,
+    "tsBuildInfoFile": "../../node_modules/.cache/web.tsbuildinfo"
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "../service/src/boundaries/preflight.ts",
+    "vite.config.ts"
+  ]
+}

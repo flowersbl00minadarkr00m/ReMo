@@ -1,0 +1,5 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": { "rootDir": ".", "tsBuildInfoFile": "../../node_modules/.cache/evidence-verification.tsbuildinfo" },
+  "include": ["src/**/*.ts"]
+}

@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "../..",
+    "tsBuildInfoFile": "../../node_modules/.cache/capture-playwright.tsbuildinfo"
+  },
+  "include": [
+    "src/**/*.ts",
+    "../domain/src/capture/nomination.ts",
+    "../domain/src/privacy/receipt.ts",
+    "../evidence-git/src/index.ts",
+    "../../apps/service/src/turns/turn-session.ts",
+    "../../apps/service/src/turns/turn-control-api.ts"
+  ]
+}

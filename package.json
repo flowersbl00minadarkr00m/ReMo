@@ -1,0 +1,35 @@
+{
+  "name": "remo",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@11.18.0",
+  "engines": {
+    "node": "24.17.0",
+    "pnpm": "11.18.0"
+  },
+  "volta": {
+    "node": "24.17.0",
+    "pnpm": "11.18.0"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc -b",
+    "test": "pnpm -r --workspace-concurrency=2 --if-present test",
+    "test:e2e": "node tests/e2e/vs001/run-acceptance.mjs --profile e2e",
+    "build": "tsc -b",
+    "verify:privacy-fixture": "pnpm --dir packages/capture-playwright exec vitest run src/privacy/privacy-capture.test.ts",
+    "verify:ten-save": "pnpm --dir apps/service exec tsx src/acceptance-sequence/verify-ten-save.ts",
+    "verify:rel001-joined": "pnpm --dir apps/service exec tsx ../../apps/web/src/features/hosted-demo/verification/verify-t6.mjs",
+    "verify:vs001-acceptance": "node tests/e2e/vs001/run-acceptance.mjs --profile full",
+    "verify:vs002-joined": "pnpm --dir apps/web build && pnpm --dir apps/service exec tsx ../../apps/web/src/features/joined-acceptance/verification/verify-t10.mjs",
+    "support:vs001": "pnpm --dir apps/service exec tsx src/support/cli.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.1",
+    "@types/node": "24.10.1",
+    "eslint": "9.39.1",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.48.1",
+    "vitest": "4.0.15"
+  }
+}

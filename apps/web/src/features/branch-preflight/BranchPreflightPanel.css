@@ -1,0 +1,45 @@
+.branch-preflight { margin-top: 28px; border: 2px solid #69471e; border-radius: 18px; background: #fffaf1; color: #221b13; overflow: clip; }
+.branch-preflight-invocation, .branch-preflight-panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px; }
+.branch-preflight-invocation { border-left: 8px solid #a65b17; }
+.branch-preflight p, .branch-preflight h2, .branch-preflight h3 { margin: 0; }
+.branch-preflight-invocation p, .branch-preflight-panel-heading p { color: #7a4515; font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.branch-preflight-invocation span { color: #604f3d; }
+.branch-preflight button { min-height: 44px; border: 1px solid #69471e; border-radius: 10px; padding: 10px 15px; background: #713e0f; color: #fff; font: inherit; font-weight: 750; cursor: pointer; }
+.branch-preflight button:focus-visible { outline: 3px solid #1259a7; outline-offset: 3px; }
+.branch-preflight button:disabled { cursor: wait; opacity: .62; }
+.branch-preflight-panel { border-top: 1px solid #d7c3a9; padding-bottom: 20px; }
+.branch-close { background: transparent !important; color: #4b341f !important; }
+.branch-checks { display: grid; gap: 10px; margin: 0; padding: 0 20px; list-style: none; }
+.branch-checks li { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 12px; border: 1px solid #d8c8b5; border-radius: 12px; padding: 13px; background: #fff; }
+.branch-checks li > span { align-self: start; border-radius: 999px; padding: 4px 8px; text-align: center; font-size: .75rem; font-weight: 850; }
+.branch-check-pass > span { background: #d9f2e3; color: #185a35; }
+.branch-check-block > span { background: #ffe1dc; color: #842619; }
+.branch-check-block:focus { outline: 3px solid #b52e22; outline-offset: 2px; }
+.branch-checks p { margin-top: 4px; color: #55493b; }
+.branch-checks code, .branch-identities code { overflow-wrap: anywhere; }
+.branch-checks small { display: block; margin-top: 6px; color: #746654; overflow-wrap: anywhere; }
+.branch-identities { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 18px 20px 0; }
+.branch-identities div { min-width: 0; border: 1px solid #d8c8b5; border-radius: 10px; padding: 11px; background: #fff; }
+.branch-identities dt { font-size: .76rem; font-weight: 800; text-transform: uppercase; }
+.branch-identities dd { margin: 5px 0 0; overflow-wrap: anywhere; }
+.branch-preflight .branch-integrity-note { margin: 18px 20px 0; border: 1px solid #caa97c; border-left: 4px solid #7b4b1c; border-radius: 10px; padding: 12px 14px; background: #fffdf8; color: #4f402f; line-height: 1.5; overflow-wrap: anywhere; }
+.branch-integrity-note p { margin-top: 4px; }
+.branch-confirmation, .branch-recovery { margin: 18px 20px 0; border: 2px solid #7b4b1c; border-radius: 12px; padding: 15px; background: #fff4df; }
+.branch-confirmation p, .branch-recovery p { margin: 5px 0 12px; }
+.branch-recovery.success { border-color: #276b43; background: #eaf7ef; }
+.branch-result dl { display: grid; gap: 8px; margin: 12px 0 0; }
+.branch-result dl div { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 10px; }
+.branch-result dt { font-weight: 800; }
+.branch-result dd { margin: 0; overflow-wrap: anywhere; }
+.branch-result.failed-no-effect { border-color: #775f2d; background: #fff8df; }
+.branch-result.recovery-required, .branch-result.unavailable { border-color: #9f2d22; background: #fff0ed; }
+@media (prefers-reduced-motion: reduce) {
+  .branch-preflight *, .branch-preflight *::before, .branch-preflight *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+@media (max-width: 620px) {
+  .branch-preflight-invocation, .branch-preflight-panel-heading { align-items: stretch; flex-direction: column; }
+  .branch-preflight button { width: 100%; }
+  .branch-checks li { grid-template-columns: 1fr; }
+  .branch-checks li > span { justify-self: start; }
+  .branch-identities { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,1726 @@
+{
+  "event": "s001.actual-media.production-acceptance",
+  "composition": {
+    "parentOrigin": "http://127.0.0.1:4175",
+    "runtimeOrigin": "http://127.0.0.1:4176",
+    "replayPackage": "@rrweb/replay@2.1.1",
+    "webRoot": "apps/web/dist"
+  },
+  "browser": {
+    "name": "chromium",
+    "version": "151.0.7922.34",
+    "headless": true,
+    "reducedMotion": "reduce"
+  },
+  "media": {
+    "rrwebDigest": "sha256:408723ab282b2025bad723679ebc981dcba12f7a95e0fa67f71621620675c0a3",
+    "rrwebSize": 5172,
+    "screenshotDigest": "sha256:c253b4ce698d68b277d7e5019f007cb834e9f3de433132d1678c04914d82880a",
+    "screenshotSize": 28543,
+    "eventCount": 4
+  },
+  "streams": {
+    "activeSafelyAvailable": [
+      "01J000000000000000000000S5"
+    ],
+    "reconstructed": [
+      "01J000000000000000000000S5"
+    ],
+    "missingOrDeleted": "covered by focused service/web degradation suites"
+  },
+  "performance": {
+    "profile": {
+      "selections": 30,
+      "commands": 30,
+      "firstFrameStarts": 5,
+      "lifecycleCycles": 8,
+      "cpuThrottling": false,
+      "nearestRank": true
+    },
+    "selectionP95Ms": 720.217,
+    "commandP95Ms": 14.9,
+    "firstSafeFrameP95Ms": 48.6,
+    "thresholdsMs": {
+      "commandAcknowledgement": 100,
+      "firstSafeFrame": 1000
+    }
+  },
+  "responsive": {
+    "primary": [
+      {
+        "width": 320,
+        "height": 720,
+        "viewport": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320,
+        "surfaceContained": true,
+        "controlsContained": true,
+        "widest": {
+          "tag": "DIV",
+          "className": "",
+          "text": "ReMo/ VS-002Boundary setupPreflightRun turnRecording offReviewAfter turnSaved re",
+          "left": 0,
+          "right": 320,
+          "width": 320
+        },
+        "overflowers": [
+          {
+            "tag": "SECTION",
+            "className": "replay-surface",
+            "text": "Historical interaction evidenceBounded replayReplay pausedStart replayPauseResta",
+            "clientWidth": 254,
+            "scrollWidth": 256
+          },
+          {
+            "tag": "DIV",
+            "className": "replay-controls",
+            "text": "Start replayPauseRestartSeek within replay0.0s / 1.3s",
+            "clientWidth": 254,
+            "scrollWidth": 256
+          },
+          {
+            "tag": "LABEL",
+            "className": "",
+            "text": "Seek within replay",
+            "clientWidth": 254,
+            "scrollWidth": 256
+          }
+        ],
+        "firstFrameProof": {
+          "runtimeState": "ready",
+          "fullSnapshotRebuilt": true,
+          "paintBoundaryConfirmed": true,
+          "visibleContentConfirmed": true,
+          "firstFrameMs": 48.600000001490116,
+          "text": "Synthetic acceptance fixture\n\nSave point evidence\nvs001-fixture-v1\nCandidate summary\n\nA deterministic UI surface for bounded source and browser evidence.\n\nNot durable\nEvidence selection\nActive panel\nevidence\nSelected evidence\nfixture-eviden",
+          "textLength": 379,
+          "elements": 35,
+          "geometry": {
+            "width": 252,
+            "height": 150,
+            "scrollWidth": 252,
+            "scrollHeight": 740
+          },
+          "keyContent": "Save point evidence",
+          "keyGeometry": {
+            "x": 8,
+            "y": 55.4375,
+            "width": 236,
+            "height": 74
+          },
+          "keyVisible": true,
+          "compositor": {
+            "root": {
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 252,
+                "height": 150
+              },
+              "style": {
+                "display": "grid",
+                "visibility": "visible",
+                "opacity": "1",
+                "transform": "none",
+                "position": "static",
+                "zIndex": "auto",
+                "overflow": "visible",
+                "backgroundColor": "rgba(0, 0, 0, 0)"
+              }
+            },
+            "wrapper": {
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 252,
+                "height": 150
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "transform": "none",
+                "position": "relative",
+                "zIndex": "auto",
+                "overflow": "hidden",
+                "backgroundColor": "rgba(0, 0, 0, 0)"
+              }
+            },
+            "frame": {
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 252,
+                "height": 150
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "transform": "none",
+                "position": "static",
+                "zIndex": "auto",
+                "overflow": "clip",
+                "backgroundColor": "rgba(0, 0, 0, 0)"
+              }
+            },
+            "keyStyle": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            }
+          },
+          "lifecycle": {
+            "frames": 0,
+            "channels": 1,
+            "ports": 1,
+            "players": 1,
+            "timers": 0,
+            "listeners": 4,
+            "objectUrls": 0,
+            "domNodes": 12,
+            "heapProxyResources": 7
+          },
+          "pixelProof": {
+            "width": 238,
+            "height": 205,
+            "sampledPixels": 48790,
+            "nonBackgroundPixels": 3488,
+            "nonBackgroundRatio": 0.07149005943840951,
+            "luminanceStandardDeviation": 48.59638350462562,
+            "pngBytes": 7483
+          }
+        },
+        "capturePixelProof": {
+          "width": 238,
+          "height": 205,
+          "sampledPixels": 48790,
+          "nonBackgroundPixels": 7088,
+          "nonBackgroundRatio": 0.1452756712441074,
+          "luminanceStandardDeviation": 49.005854384882156,
+          "pngBytes": 228153
+        }
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "surfaceContained": true,
+        "controlsContained": true,
+        "widest": {
+          "tag": "DIV",
+          "className": "",
+          "text": "ReMo/ VS-002Boundary setupPreflightRun turnRecording offReviewAfter turnSaved re",
+          "left": 0,
+          "right": 390,
+          "width": 390
+        },
+        "overflowers": [
+          {
+            "tag": "SECTION",
+            "className": "replay-surface",
+            "text": "Historical interaction evidenceBounded replayReplay pausedStart replayPauseResta",
+            "clientWidth": 324,
+            "scrollWidth": 326
+          },
+          {
+            "tag": "DIV",
+            "className": "replay-controls",
+            "text": "Start replayPauseRestartSeek within replay0.0s / 1.3s",
+            "clientWidth": 324,
+            "scrollWidth": 326
+          },
+          {
+            "tag": "LABEL",
+            "className": "",
+            "text": "Seek within replay",
+            "clientWidth": 324,
+            "scrollWidth": 326
+          }
+        ],
+        "firstFrameProof": {
+          "runtimeState": "ready",
+          "fullSnapshotRebuilt": true,
+          "paintBoundaryConfirmed": true,
+          "visibleContentConfirmed": true,
+          "firstFrameMs": 48.600000001490116,
+          "text": "Synthetic acceptance fixture\n\nSave point evidence\nvs001-fixture-v1\nCandidate summary\n\nA deterministic UI surface for bounded source and browser evidence.\n\nNot durable\nEvidence selection\nActive panel\nevidence\nSelected evidence\nfixture-eviden",
+          "textLength": 379,
+          "elements": 35,
+          "geometry": {
+            "width": 322,
+            "height": 150,
+            "scrollWidth": 322,
+            "scrollHeight": 667
+          },
+          "keyContent": "Save point evidence",
+          "keyGeometry": {
+            "x": 8,
+            "y": 55.4375,
+            "width": 306,
+            "height": 37
+          },
+          "keyVisible": true,
+          "compositor": {
+            "root": {
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 322,
+                "height": 150
+              },
+              "style": {
+                "display": "grid",
+                "visibility": "visible",
+                "opacity": "1",
+                "transform": "none",
+                "position": "static",
+                "zIndex": "auto",
+                "overflow": "visible",
+                "backgroundColor": "rgba(0, 0, 0, 0)"
+              }
+            },
+            "wrapper": {
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 322,
+                "height": 150
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "transform": "none",
+                "position": "relative",
+                "zIndex": "auto",
+                "overflow": "hidden",
+                "backgroundColor": "rgba(0, 0, 0, 0)"
+              }
+            },
+            "frame": {
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 322,
+                "height": 150
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "transform": "none",
+                "position": "static",
+                "zIndex": "auto",
+                "overflow": "clip",
+                "backgroundColor": "rgba(0, 0, 0, 0)"
+              }
+            },
+            "keyStyle": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            }
+          },
+          "lifecycle": {
+            "frames": 0,
+            "channels": 1,
+            "ports": 1,
+            "players": 1,
+            "timers": 0,
+            "listeners": 4,
+            "objectUrls": 0,
+            "domNodes": 12,
+            "heapProxyResources": 7
+          },
+          "pixelProof": {
+            "width": 308,
+            "height": 205,
+            "sampledPixels": 63140,
+            "nonBackgroundPixels": 4023,
+            "nonBackgroundRatio": 0.06371555273994299,
+            "luminanceStandardDeviation": 45.15960015602492,
+            "pngBytes": 8757
+          }
+        },
+        "capturePixelProof": {
+          "width": 308,
+          "height": 205,
+          "sampledPixels": 63140,
+          "nonBackgroundPixels": 4023,
+          "nonBackgroundRatio": 0.06371555273994299,
+          "luminanceStandardDeviation": 45.15960015602492,
+          "pngBytes": 230090
+        }
+      },
+      {
+        "width": 768,
+        "height": 1024,
+        "viewport": 768,
+        "documentWidth": 768,
+        "bodyWidth": 768,
+        "surfaceContained": true,
+        "controlsContained": true,
+        "widest": {
+          "tag": "DIV",
+          "className": "",
+          "text": "ReMo/ VS-002Boundary setupPreflightRun turnRecording offReviewAfter turnSaved re",
+          "left": 0,
+          "right": 768,
+          "width": 768
+        },
+        "overflowers": [
+          {
+            "tag": "SECTION",
+            "className": "replay-surface",
+            "text": "Historical interaction evidenceBounded replayReplay pausedStart replayPauseResta",
+            "clientWidth": 650,
+            "scrollWidth": 652
+          },
+          {
+            "tag": "DIV",
+            "className": "replay-controls",
+            "text": "Start replayPauseRestartSeek within replay0.0s / 1.3s",
+            "clientWidth": 650,
+            "scrollWidth": 652
+          },
+          {
+            "tag": "LABEL",
+            "className": "",
+            "text": "Seek within replay",
+            "clientWidth": 650,
+            "scrollWidth": 652
+          }
+        ],
+        "firstFrameProof": {
+          "runtimeState": "ready",
+          "fullSnapshotRebuilt": true,
+          "paintBoundaryConfirmed": true,
+          "visibleContentConfirmed": true,
+          "firstFrameMs": 48.600000001490116,
+          "text": "Synthetic acceptance fixture\n\nSave point evidence\nvs001-fixture-v1\nCandidate summary\n\nA deterministic UI surface for bounded source and browser evidence.\n\nNot durable\nEvidence selection\nActive panel\nevidence\nSelected evidence\nfixture-eviden",
+          "textLength": 379,
+          "elements": 35,
+          "geometry": {
+            "width": 648,
+            "height": 150,
+            "scrollWidth": 648,
+            "scrollHeight": 612
+          },
+          "keyContent": "Save point evidence",
+          "keyGeometry": {
+            "x": 8,
+            "y": 55.4375,
+            "width": 632,
+            "height": 37
+          },
+          "keyVisible": true,
+          "compositor": {
+            "root": {
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 648,
+                "height": 150
+              },
+              "style": {
+                "display": "grid",
+                "visibility": "visible",
+                "opacity": "1",
+                "transform": "none",
+                "position": "static",
+                "zIndex": "auto",
+                "overflow": "visible",
+                "backgroundColor": "rgba(0, 0, 0, 0)"
+              }
+            },
+            "wrapper": {
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 648,
+                "height": 150
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "transform": "none",
+                "position": "relative",
+                "zIndex": "auto",
+                "overflow": "hidden",
+                "backgroundColor": "rgba(0, 0, 0, 0)"
+              }
+            },
+            "frame": {
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 648,
+                "height": 150
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "transform": "none",
+                "position": "static",
+                "zIndex": "auto",
+                "overflow": "clip",
+                "backgroundColor": "rgba(0, 0, 0, 0)"
+              }
+            },
+            "keyStyle": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            }
+          },
+          "lifecycle": {
+            "frames": 0,
+            "channels": 1,
+            "ports": 1,
+            "players": 1,
+            "timers": 0,
+            "listeners": 4,
+            "objectUrls": 0,
+            "domNodes": 12,
+            "heapProxyResources": 7
+          },
+          "pixelProof": {
+            "width": 634,
+            "height": 205,
+            "sampledPixels": 129970,
+            "nonBackgroundPixels": 4028,
+            "nonBackgroundRatio": 0.030991767330922522,
+            "luminanceStandardDeviation": 31.893831617263167,
+            "pngBytes": 9268
+          }
+        },
+        "capturePixelProof": {
+          "width": 634,
+          "height": 205,
+          "sampledPixels": 129970,
+          "nonBackgroundPixels": 4028,
+          "nonBackgroundRatio": 0.030991767330922522,
+          "luminanceStandardDeviation": 31.89371180708874,
+          "pngBytes": 253915
+        }
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "viewport": 1024,
+        "documentWidth": 1024,
+        "bodyWidth": 1024,
+        "surfaceContained": true,
+        "controlsContained": true,
+        "widest": {
+          "tag": "DIV",
+          "className": "",
+          "text": "ReMo/ VS-002Boundary setupPreflightRun turnRecording offReviewAfter turnSaved re",
+          "left": 0,
+          "right": 1024,
+          "width": 1024
+        },
+        "overflowers": [
+          {
+            "tag": "SECTION",
+            "className": "replay-surface",
+            "text": "Historical interaction evidenceBounded replayReplay pausedStart replayPauseResta",
+            "clientWidth": 336,
+            "scrollWidth": 338
+          },
+          {
+            "tag": "DIV",
+            "className": "replay-controls",
+            "text": "Start replayPauseRestartSeek within replay0.0s / 1.3s",
+            "clientWidth": 336,
+            "scrollWidth": 338
+          },
+          {
+            "tag": "LABEL",
+            "className": "",
+            "text": "Seek within replay",
+            "clientWidth": 336,
+            "scrollWidth": 338
+          }
+        ],
+        "firstFrameProof": {
+          "runtimeState": "ready",
+          "fullSnapshotRebuilt": true,
+          "paintBoundaryConfirmed": true,
+          "visibleContentConfirmed": true,
+          "firstFrameMs": 48.600000001490116,
+          "text": "Synthetic acceptance fixture\n\nSave point evidence\nvs001-fixture-v1\nCandidate summary\n\nA deterministic UI surface for bounded source and browser evidence.\n\nNot durable\nEvidence selection\nActive panel\nevidence\nSelected evidence\nfixture-eviden",
+          "textLength": 379,
+          "elements": 35,
+          "geometry": {
+            "width": 334,
+            "height": 150,
+            "scrollWidth": 334,
+            "scrollHeight": 649
+          },
+          "keyContent": "Save point evidence",
+          "keyGeometry": {
+            "x": 8,
+            "y": 55.4375,
+            "width": 318,
+            "height": 37
+          },
+          "keyVisible": true,
+          "compositor": {
+            "root": {
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 334,
+                "height": 150
+              },
+              "style": {
+                "display": "grid",
+                "visibility": "visible",
+                "opacity": "1",
+                "transform": "none",
+                "position": "static",
+                "zIndex": "auto",
+                "overflow": "visible",
+                "backgroundColor": "rgba(0, 0, 0, 0)"
+              }
+            },
+            "wrapper": {
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 334,
+                "height": 150
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "transform": "none",
+                "position": "relative",
+                "zIndex": "auto",
+                "overflow": "hidden",
+                "backgroundColor": "rgba(0, 0, 0, 0)"
+              }
+            },
+            "frame": {
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 334,
+                "height": 150
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "transform": "none",
+                "position": "static",
+                "zIndex": "auto",
+                "overflow": "clip",
+                "backgroundColor": "rgba(0, 0, 0, 0)"
+              }
+            },
+            "keyStyle": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            }
+          },
+          "lifecycle": {
+            "frames": 0,
+            "channels": 1,
+            "ports": 1,
+            "players": 1,
+            "timers": 0,
+            "listeners": 4,
+            "objectUrls": 0,
+            "domNodes": 12,
+            "heapProxyResources": 7
+          },
+          "pixelProof": {
+            "width": 320,
+            "height": 205,
+            "sampledPixels": 65600,
+            "nonBackgroundPixels": 4028,
+            "nonBackgroundRatio": 0.06140243902439024,
+            "luminanceStandardDeviation": 44.357394776683705,
+            "pngBytes": 8766
+          }
+        },
+        "capturePixelProof": {
+          "width": 320,
+          "height": 205,
+          "sampledPixels": 65600,
+          "nonBackgroundPixels": 4028,
+          "nonBackgroundRatio": 0.06140243902439024,
+          "luminanceStandardDeviation": 44.357394776683705,
+          "pngBytes": 268159
+        }
+      },
+      {
+        "width": 1440,
+        "height": 900,
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "surfaceContained": true,
+        "controlsContained": true,
+        "widest": {
+          "tag": "DIV",
+          "className": "",
+          "text": "ReMo/ VS-002Boundary setupPreflightRun turnRecording offReviewAfter turnSaved re",
+          "left": 0,
+          "right": 1440,
+          "width": 1440
+        },
+        "overflowers": [
+          {
+            "tag": "LABEL",
+            "className": "",
+            "text": "Seek within replay",
+            "clientWidth": 376,
+            "scrollWidth": 378
+          }
+        ],
+        "firstFrameProof": {
+          "runtimeState": "ready",
+          "fullSnapshotRebuilt": true,
+          "paintBoundaryConfirmed": true,
+          "visibleContentConfirmed": true,
+          "firstFrameMs": 48.600000001490116,
+          "text": "Synthetic acceptance fixture\n\nSave point evidence\nvs001-fixture-v1\nCandidate summary\n\nA deterministic UI surface for bounded source and browser evidence.\n\nNot durable\nEvidence selection\nActive panel\nevidence\nSelected evidence\nfixture-eviden",
+          "textLength": 379,
+          "elements": 35,
+          "geometry": {
+            "width": 704,
+            "height": 150,
+            "scrollWidth": 704,
+            "scrollHeight": 612
+          },
+          "keyContent": "Save point evidence",
+          "keyGeometry": {
+            "x": 8,
+            "y": 55.4375,
+            "width": 688,
+            "height": 37
+          },
+          "keyVisible": true,
+          "compositor": {
+            "root": {
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 704,
+                "height": 150
+              },
+              "style": {
+                "display": "grid",
+                "visibility": "visible",
+                "opacity": "1",
+                "transform": "none",
+                "position": "static",
+                "zIndex": "auto",
+                "overflow": "visible",
+                "backgroundColor": "rgba(0, 0, 0, 0)"
+              }
+            },
+            "wrapper": {
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 704,
+                "height": 150
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "transform": "none",
+                "position": "relative",
+                "zIndex": "auto",
+                "overflow": "hidden",
+                "backgroundColor": "rgba(0, 0, 0, 0)"
+              }
+            },
+            "frame": {
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 704,
+                "height": 150
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "transform": "none",
+                "position": "static",
+                "zIndex": "auto",
+                "overflow": "clip",
+                "backgroundColor": "rgba(0, 0, 0, 0)"
+              }
+            },
+            "keyStyle": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            }
+          },
+          "lifecycle": {
+            "frames": 0,
+            "channels": 1,
+            "ports": 1,
+            "players": 1,
+            "timers": 0,
+            "listeners": 4,
+            "objectUrls": 0,
+            "domNodes": 12,
+            "heapProxyResources": 7
+          },
+          "pixelProof": {
+            "width": 690,
+            "height": 285,
+            "sampledPixels": 196650,
+            "nonBackgroundPixels": 4023,
+            "nonBackgroundRatio": 0.02045766590389016,
+            "luminanceStandardDeviation": 26.02823393258419,
+            "pngBytes": 9808
+          }
+        },
+        "capturePixelProof": {
+          "width": 690,
+          "height": 285,
+          "sampledPixels": 196650,
+          "nonBackgroundPixels": 4023,
+          "nonBackgroundRatio": 0.02045766590389016,
+          "luminanceStandardDeviation": 26.02823393258419,
+          "pngBytes": 288166
+        }
+      }
+    ],
+    "degraded": [
+      {
+        "width": 320,
+        "height": 720,
+        "viewport": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320,
+        "surfaceContained": true,
+        "controlsContained": true,
+        "widest": {
+          "tag": "DIV",
+          "className": "",
+          "text": "ReMo/ VS-002Boundary setupPreflightRun turnRecording offReviewAfter turnSaved re",
+          "left": 0,
+          "right": 320,
+          "width": 320
+        },
+        "overflowers": []
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "surfaceContained": true,
+        "controlsContained": true,
+        "widest": {
+          "tag": "DIV",
+          "className": "",
+          "text": "ReMo/ VS-002Boundary setupPreflightRun turnRecording offReviewAfter turnSaved re",
+          "left": 0,
+          "right": 390,
+          "width": 390
+        },
+        "overflowers": []
+      },
+      {
+        "width": 768,
+        "height": 1024,
+        "viewport": 768,
+        "documentWidth": 768,
+        "bodyWidth": 768,
+        "surfaceContained": true,
+        "controlsContained": true,
+        "widest": {
+          "tag": "DIV",
+          "className": "",
+          "text": "ReMo/ VS-002Boundary setupPreflightRun turnRecording offReviewAfter turnSaved re",
+          "left": 0,
+          "right": 768,
+          "width": 768
+        },
+        "overflowers": []
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "viewport": 1024,
+        "documentWidth": 1024,
+        "bodyWidth": 1024,
+        "surfaceContained": true,
+        "controlsContained": true,
+        "widest": {
+          "tag": "DIV",
+          "className": "",
+          "text": "ReMo/ VS-002Boundary setupPreflightRun turnRecording offReviewAfter turnSaved re",
+          "left": 0,
+          "right": 1024,
+          "width": 1024
+        },
+        "overflowers": []
+      },
+      {
+        "width": 1440,
+        "height": 900,
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "surfaceContained": true,
+        "controlsContained": true,
+        "widest": {
+          "tag": "DIV",
+          "className": "",
+          "text": "ReMo/ VS-002Boundary setupPreflightRun turnRecording offReviewAfter turnSaved re",
+          "left": 0,
+          "right": 1440,
+          "width": 1440
+        },
+        "overflowers": []
+      }
+    ]
+  },
+  "security": {
+    "parentCsp": "default-src 'none'; script-src 'self' 'nonce-hf6EfxTZkHhOirLTI68Uuunp'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; frame-src http://127.0.0.1:4176; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+    "parentCannotReadRuntime": true,
+    "parentMarker": "parent-unchanged",
+    "runtimeIsolation": {
+      "parentReadable": false,
+      "cookie": "",
+      "localStorageLength": 0,
+      "sessionStorageLength": 0,
+      "nestedSandbox": "allow-same-origin",
+      "nestedTabIndex": "-1",
+      "activeNodes": 0,
+      "nestedElementCount": 42,
+      "nestedText": "Synthetic acceptance fixture\n\nSave point evidence\nvs001-fixture-v1\nCandidate summary\n\nA deterministic UI surface for bounded source and browser evidence.\n\nNot d",
+      "nestedViewport": {
+        "width": 704,
+        "height": 150,
+        "scrollWidth": 704,
+        "scrollHeight": 612
+      },
+      "wrapperInert": true
+    },
+    "telemetry": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "unexpectedRequests": [],
+      "webSockets": [],
+      "runtimeCredentialRequests": [],
+      "responsePolicyFailures": []
+    },
+    "terminalBootstrap": {
+      "wrong-source": {
+        "state": "bootstrap-rejected",
+        "lifecycle": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 9,
+          "heapProxyResources": 0
+        }
+      },
+      "wrong-origin": {
+        "state": "bootstrap-rejected",
+        "lifecycle": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 9,
+          "heapProxyResources": 0
+        }
+      },
+      "wrong-window": {
+        "state": "bootstrap-rejected",
+        "lifecycle": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 10,
+          "heapProxyResources": 0
+        }
+      },
+      "malformed-bootstrap": {
+        "state": "bootstrap-rejected",
+        "lifecycle": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 9,
+          "heapProxyResources": 0
+        }
+      },
+      "duplicate-transferred-port": {
+        "state": "bootstrap-rejected",
+        "lifecycle": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 9,
+          "heapProxyResources": 0
+        }
+      },
+      "timeout-then-late": {
+        "state": "bootstrap-timeout",
+        "lifecycle": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 9,
+          "heapProxyResources": 0
+        }
+      },
+      "malformed-initialize": {
+        "state": "initialize-rejected",
+        "lifecycle": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 9,
+          "heapProxyResources": 0
+        }
+      },
+      "duplicate-initialize": {
+        "state": "replay.protocol-failure",
+        "lifecycle": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 9,
+          "heapProxyResources": 0
+        }
+      },
+      "accepted-then-duplicate-bootstrap": {
+        "state": "destroyed",
+        "lifecycle": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 9,
+          "heapProxyResources": 0
+        },
+        "duplicateTransferredPortCloseCalls": 1,
+        "acceptedSessionCommandAfterDuplicate": "restart-acknowledged"
+      },
+      "post-destroy": {
+        "state": "destroyed",
+        "lifecycle": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 9,
+          "heapProxyResources": 0
+        }
+      }
+    },
+    "activeContentRejection": "focused handler/runtime tests",
+    "runtimeLossScreenshotRetained": true
+  },
+  "degradation": {
+    "assetsFailure": "replay.runtime-assets-unavailable",
+    "listenerFailure": "replay.listener-unavailable",
+    "degradedResponsive": [
+      {
+        "width": 320,
+        "height": 720,
+        "viewport": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320,
+        "surfaceContained": true,
+        "controlsContained": true,
+        "widest": {
+          "tag": "DIV",
+          "className": "",
+          "text": "ReMo/ VS-002Boundary setupPreflightRun turnRecording offReviewAfter turnSaved re",
+          "left": 0,
+          "right": 320,
+          "width": 320
+        },
+        "overflowers": []
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "surfaceContained": true,
+        "controlsContained": true,
+        "widest": {
+          "tag": "DIV",
+          "className": "",
+          "text": "ReMo/ VS-002Boundary setupPreflightRun turnRecording offReviewAfter turnSaved re",
+          "left": 0,
+          "right": 390,
+          "width": 390
+        },
+        "overflowers": []
+      },
+      {
+        "width": 768,
+        "height": 1024,
+        "viewport": 768,
+        "documentWidth": 768,
+        "bodyWidth": 768,
+        "surfaceContained": true,
+        "controlsContained": true,
+        "widest": {
+          "tag": "DIV",
+          "className": "",
+          "text": "ReMo/ VS-002Boundary setupPreflightRun turnRecording offReviewAfter turnSaved re",
+          "left": 0,
+          "right": 768,
+          "width": 768
+        },
+        "overflowers": []
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "viewport": 1024,
+        "documentWidth": 1024,
+        "bodyWidth": 1024,
+        "surfaceContained": true,
+        "controlsContained": true,
+        "widest": {
+          "tag": "DIV",
+          "className": "",
+          "text": "ReMo/ VS-002Boundary setupPreflightRun turnRecording offReviewAfter turnSaved re",
+          "left": 0,
+          "right": 1024,
+          "width": 1024
+        },
+        "overflowers": []
+      },
+      {
+        "width": 1440,
+        "height": 900,
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "surfaceContained": true,
+        "controlsContained": true,
+        "widest": {
+          "tag": "DIV",
+          "className": "",
+          "text": "ReMo/ VS-002Boundary setupPreflightRun turnRecording offReviewAfter turnSaved re",
+          "left": 0,
+          "right": 1440,
+          "width": 1440
+        },
+        "overflowers": []
+      }
+    ]
+  },
+  "cleanup": {
+    "composedShutdownClosed4176": true,
+    "contextsClosed": true,
+    "repeatedLifecycle": [
+      {
+        "cycle": 1,
+        "transition": "same-document-pushState-popstate",
+        "activeParent": {
+          "frames": 1,
+          "channels": 1,
+          "ports": 1,
+          "players": 0,
+          "timers": 1,
+          "listeners": 2,
+          "objectUrls": 1,
+          "domNodes": 322,
+          "heapProxyResources": 7
+        },
+        "activeRuntime": {
+          "frames": 0,
+          "channels": 1,
+          "ports": 1,
+          "players": 1,
+          "timers": 0,
+          "listeners": 4,
+          "objectUrls": 0,
+          "domNodes": 12,
+          "heapProxyResources": 7
+        },
+        "terminalRuntime": {
+          "cycleId": "same-document-cycle-1",
+          "runtimeRealmId": "68a48e5e-76ed-4400-a35b-67a58d8fcfd3",
+          "terminalState": "pagehide",
+          "lifecycle": {
+            "frames": 0,
+            "channels": 0,
+            "ports": 0,
+            "players": 0,
+            "timers": 0,
+            "listeners": 0,
+            "objectUrls": 0,
+            "domNodes": 9,
+            "heapProxyResources": 0
+          },
+          "sourceFrameUrl": "http://127.0.0.1:4176/runtime"
+        },
+        "observer": {
+          "type": "verifier-only-one-shot-pagehide",
+          "registeredAfterRuntimeTeardownListener": true,
+          "trackedLifecycleUnchangedOnRegistration": true,
+          "deliveryCount": 1,
+          "pendingAfterDelivery": false
+        },
+        "baseline": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 290,
+          "heapProxyResources": 0
+        },
+        "frameCount": 1,
+        "realm": {
+          "id": "df1928d6-0040-4fec-9489-c4ff16e277eb",
+          "navigationEntries": 1,
+          "runtimeId": "68a48e5e-76ed-4400-a35b-67a58d8fcfd3"
+        }
+      },
+      {
+        "cycle": 2,
+        "transition": "same-document-pushState-popstate",
+        "activeParent": {
+          "frames": 1,
+          "channels": 1,
+          "ports": 1,
+          "players": 0,
+          "timers": 1,
+          "listeners": 2,
+          "objectUrls": 1,
+          "domNodes": 322,
+          "heapProxyResources": 7
+        },
+        "activeRuntime": {
+          "frames": 0,
+          "channels": 1,
+          "ports": 1,
+          "players": 1,
+          "timers": 0,
+          "listeners": 4,
+          "objectUrls": 0,
+          "domNodes": 12,
+          "heapProxyResources": 7
+        },
+        "terminalRuntime": {
+          "cycleId": "same-document-cycle-2",
+          "runtimeRealmId": "e97729fe-a57c-49b1-8234-33a5a2d649b6",
+          "terminalState": "pagehide",
+          "lifecycle": {
+            "frames": 0,
+            "channels": 0,
+            "ports": 0,
+            "players": 0,
+            "timers": 0,
+            "listeners": 0,
+            "objectUrls": 0,
+            "domNodes": 9,
+            "heapProxyResources": 0
+          },
+          "sourceFrameUrl": "http://127.0.0.1:4176/runtime"
+        },
+        "observer": {
+          "type": "verifier-only-one-shot-pagehide",
+          "registeredAfterRuntimeTeardownListener": true,
+          "trackedLifecycleUnchangedOnRegistration": true,
+          "deliveryCount": 1,
+          "pendingAfterDelivery": false
+        },
+        "baseline": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 290,
+          "heapProxyResources": 0
+        },
+        "frameCount": 1,
+        "realm": {
+          "id": "df1928d6-0040-4fec-9489-c4ff16e277eb",
+          "navigationEntries": 1,
+          "runtimeId": "e97729fe-a57c-49b1-8234-33a5a2d649b6"
+        }
+      },
+      {
+        "cycle": 3,
+        "transition": "same-document-pushState-popstate",
+        "activeParent": {
+          "frames": 1,
+          "channels": 1,
+          "ports": 1,
+          "players": 0,
+          "timers": 1,
+          "listeners": 2,
+          "objectUrls": 1,
+          "domNodes": 322,
+          "heapProxyResources": 7
+        },
+        "activeRuntime": {
+          "frames": 0,
+          "channels": 1,
+          "ports": 1,
+          "players": 1,
+          "timers": 0,
+          "listeners": 4,
+          "objectUrls": 0,
+          "domNodes": 12,
+          "heapProxyResources": 7
+        },
+        "terminalRuntime": {
+          "cycleId": "same-document-cycle-3",
+          "runtimeRealmId": "1a0c27b2-93d0-4364-88c5-5e3eb03ef2de",
+          "terminalState": "pagehide",
+          "lifecycle": {
+            "frames": 0,
+            "channels": 0,
+            "ports": 0,
+            "players": 0,
+            "timers": 0,
+            "listeners": 0,
+            "objectUrls": 0,
+            "domNodes": 9,
+            "heapProxyResources": 0
+          },
+          "sourceFrameUrl": "http://127.0.0.1:4176/runtime"
+        },
+        "observer": {
+          "type": "verifier-only-one-shot-pagehide",
+          "registeredAfterRuntimeTeardownListener": true,
+          "trackedLifecycleUnchangedOnRegistration": true,
+          "deliveryCount": 1,
+          "pendingAfterDelivery": false
+        },
+        "baseline": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 290,
+          "heapProxyResources": 0
+        },
+        "frameCount": 1,
+        "realm": {
+          "id": "df1928d6-0040-4fec-9489-c4ff16e277eb",
+          "navigationEntries": 1,
+          "runtimeId": "1a0c27b2-93d0-4364-88c5-5e3eb03ef2de"
+        }
+      },
+      {
+        "cycle": 4,
+        "transition": "same-document-pushState-popstate",
+        "activeParent": {
+          "frames": 1,
+          "channels": 1,
+          "ports": 1,
+          "players": 0,
+          "timers": 1,
+          "listeners": 2,
+          "objectUrls": 1,
+          "domNodes": 322,
+          "heapProxyResources": 7
+        },
+        "activeRuntime": {
+          "frames": 0,
+          "channels": 1,
+          "ports": 1,
+          "players": 1,
+          "timers": 0,
+          "listeners": 4,
+          "objectUrls": 0,
+          "domNodes": 12,
+          "heapProxyResources": 7
+        },
+        "terminalRuntime": {
+          "cycleId": "same-document-cycle-4",
+          "runtimeRealmId": "ee0413c1-d66c-4041-956e-acc48bd30323",
+          "terminalState": "pagehide",
+          "lifecycle": {
+            "frames": 0,
+            "channels": 0,
+            "ports": 0,
+            "players": 0,
+            "timers": 0,
+            "listeners": 0,
+            "objectUrls": 0,
+            "domNodes": 9,
+            "heapProxyResources": 0
+          },
+          "sourceFrameUrl": "http://127.0.0.1:4176/runtime"
+        },
+        "observer": {
+          "type": "verifier-only-one-shot-pagehide",
+          "registeredAfterRuntimeTeardownListener": true,
+          "trackedLifecycleUnchangedOnRegistration": true,
+          "deliveryCount": 1,
+          "pendingAfterDelivery": false
+        },
+        "baseline": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 290,
+          "heapProxyResources": 0
+        },
+        "frameCount": 1,
+        "realm": {
+          "id": "df1928d6-0040-4fec-9489-c4ff16e277eb",
+          "navigationEntries": 1,
+          "runtimeId": "ee0413c1-d66c-4041-956e-acc48bd30323"
+        }
+      },
+      {
+        "cycle": 5,
+        "transition": "same-document-pushState-popstate",
+        "activeParent": {
+          "frames": 1,
+          "channels": 1,
+          "ports": 1,
+          "players": 0,
+          "timers": 1,
+          "listeners": 2,
+          "objectUrls": 1,
+          "domNodes": 322,
+          "heapProxyResources": 7
+        },
+        "activeRuntime": {
+          "frames": 0,
+          "channels": 1,
+          "ports": 1,
+          "players": 1,
+          "timers": 0,
+          "listeners": 4,
+          "objectUrls": 0,
+          "domNodes": 12,
+          "heapProxyResources": 7
+        },
+        "terminalRuntime": {
+          "cycleId": "same-document-cycle-5",
+          "runtimeRealmId": "052ff6f1-b3a4-495c-97f6-83c383d5d979",
+          "terminalState": "pagehide",
+          "lifecycle": {
+            "frames": 0,
+            "channels": 0,
+            "ports": 0,
+            "players": 0,
+            "timers": 0,
+            "listeners": 0,
+            "objectUrls": 0,
+            "domNodes": 9,
+            "heapProxyResources": 0
+          },
+          "sourceFrameUrl": "http://127.0.0.1:4176/runtime"
+        },
+        "observer": {
+          "type": "verifier-only-one-shot-pagehide",
+          "registeredAfterRuntimeTeardownListener": true,
+          "trackedLifecycleUnchangedOnRegistration": true,
+          "deliveryCount": 1,
+          "pendingAfterDelivery": false
+        },
+        "baseline": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 290,
+          "heapProxyResources": 0
+        },
+        "frameCount": 1,
+        "realm": {
+          "id": "df1928d6-0040-4fec-9489-c4ff16e277eb",
+          "navigationEntries": 1,
+          "runtimeId": "052ff6f1-b3a4-495c-97f6-83c383d5d979"
+        }
+      },
+      {
+        "cycle": 6,
+        "transition": "same-document-pushState-popstate",
+        "activeParent": {
+          "frames": 1,
+          "channels": 1,
+          "ports": 1,
+          "players": 0,
+          "timers": 1,
+          "listeners": 2,
+          "objectUrls": 1,
+          "domNodes": 322,
+          "heapProxyResources": 7
+        },
+        "activeRuntime": {
+          "frames": 0,
+          "channels": 1,
+          "ports": 1,
+          "players": 1,
+          "timers": 0,
+          "listeners": 4,
+          "objectUrls": 0,
+          "domNodes": 12,
+          "heapProxyResources": 7
+        },
+        "terminalRuntime": {
+          "cycleId": "same-document-cycle-6",
+          "runtimeRealmId": "893f8fe0-c20f-4638-84e6-ea9045f5b35c",
+          "terminalState": "pagehide",
+          "lifecycle": {
+            "frames": 0,
+            "channels": 0,
+            "ports": 0,
+            "players": 0,
+            "timers": 0,
+            "listeners": 0,
+            "objectUrls": 0,
+            "domNodes": 9,
+            "heapProxyResources": 0
+          },
+          "sourceFrameUrl": "http://127.0.0.1:4176/runtime"
+        },
+        "observer": {
+          "type": "verifier-only-one-shot-pagehide",
+          "registeredAfterRuntimeTeardownListener": true,
+          "trackedLifecycleUnchangedOnRegistration": true,
+          "deliveryCount": 1,
+          "pendingAfterDelivery": false
+        },
+        "baseline": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 290,
+          "heapProxyResources": 0
+        },
+        "frameCount": 1,
+        "realm": {
+          "id": "df1928d6-0040-4fec-9489-c4ff16e277eb",
+          "navigationEntries": 1,
+          "runtimeId": "893f8fe0-c20f-4638-84e6-ea9045f5b35c"
+        }
+      },
+      {
+        "cycle": 7,
+        "transition": "same-document-pushState-popstate",
+        "activeParent": {
+          "frames": 1,
+          "channels": 1,
+          "ports": 1,
+          "players": 0,
+          "timers": 1,
+          "listeners": 2,
+          "objectUrls": 1,
+          "domNodes": 322,
+          "heapProxyResources": 7
+        },
+        "activeRuntime": {
+          "frames": 0,
+          "channels": 1,
+          "ports": 1,
+          "players": 1,
+          "timers": 0,
+          "listeners": 4,
+          "objectUrls": 0,
+          "domNodes": 12,
+          "heapProxyResources": 7
+        },
+        "terminalRuntime": {
+          "cycleId": "same-document-cycle-7",
+          "runtimeRealmId": "87f50096-8fc4-484d-a9d0-3b9f0e942fac",
+          "terminalState": "pagehide",
+          "lifecycle": {
+            "frames": 0,
+            "channels": 0,
+            "ports": 0,
+            "players": 0,
+            "timers": 0,
+            "listeners": 0,
+            "objectUrls": 0,
+            "domNodes": 9,
+            "heapProxyResources": 0
+          },
+          "sourceFrameUrl": "http://127.0.0.1:4176/runtime"
+        },
+        "observer": {
+          "type": "verifier-only-one-shot-pagehide",
+          "registeredAfterRuntimeTeardownListener": true,
+          "trackedLifecycleUnchangedOnRegistration": true,
+          "deliveryCount": 1,
+          "pendingAfterDelivery": false
+        },
+        "baseline": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 290,
+          "heapProxyResources": 0
+        },
+        "frameCount": 1,
+        "realm": {
+          "id": "df1928d6-0040-4fec-9489-c4ff16e277eb",
+          "navigationEntries": 1,
+          "runtimeId": "87f50096-8fc4-484d-a9d0-3b9f0e942fac"
+        }
+      },
+      {
+        "cycle": 8,
+        "transition": "same-document-pushState-popstate",
+        "activeParent": {
+          "frames": 1,
+          "channels": 1,
+          "ports": 1,
+          "players": 0,
+          "timers": 1,
+          "listeners": 2,
+          "objectUrls": 1,
+          "domNodes": 322,
+          "heapProxyResources": 7
+        },
+        "activeRuntime": {
+          "frames": 0,
+          "channels": 1,
+          "ports": 1,
+          "players": 1,
+          "timers": 0,
+          "listeners": 4,
+          "objectUrls": 0,
+          "domNodes": 12,
+          "heapProxyResources": 7
+        },
+        "terminalRuntime": {
+          "cycleId": "same-document-cycle-8",
+          "runtimeRealmId": "33edab28-759c-4468-bf81-2a95718ead80",
+          "terminalState": "pagehide",
+          "lifecycle": {
+            "frames": 0,
+            "channels": 0,
+            "ports": 0,
+            "players": 0,
+            "timers": 0,
+            "listeners": 0,
+            "objectUrls": 0,
+            "domNodes": 9,
+            "heapProxyResources": 0
+          },
+          "sourceFrameUrl": "http://127.0.0.1:4176/runtime"
+        },
+        "observer": {
+          "type": "verifier-only-one-shot-pagehide",
+          "registeredAfterRuntimeTeardownListener": true,
+          "trackedLifecycleUnchangedOnRegistration": true,
+          "deliveryCount": 1,
+          "pendingAfterDelivery": false
+        },
+        "baseline": {
+          "frames": 0,
+          "channels": 0,
+          "ports": 0,
+          "players": 0,
+          "timers": 0,
+          "listeners": 0,
+          "objectUrls": 0,
+          "domNodes": 290,
+          "heapProxyResources": 0
+        },
+        "frameCount": 1,
+        "realm": {
+          "id": "df1928d6-0040-4fec-9489-c4ff16e277eb",
+          "navigationEntries": 1,
+          "runtimeId": "33edab28-759c-4468-bf81-2a95718ead80"
+        }
+      }
+    ],
+    "temporaryProjectRemovedByVerifier": true
+  }
+}

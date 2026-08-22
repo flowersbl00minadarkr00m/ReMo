@@ -1,0 +1,6 @@
+:root { color-scheme: light; font-family: system-ui, sans-serif; background: #eef2f7; }
+html, body, #replay-root { width: 100%; min-height: 100%; margin: 0; }
+body { overflow: hidden; }
+#replay-root { display: grid; place-items: start center; pointer-events: none; contain: layout paint; }
+.replayer-wrapper.remo-reconstruction-wrapper { width: 100% !important; height: 100% !important; transform: none !important; transform-origin: top left; overflow: hidden; pointer-events: none !important; }
+.remo-reconstruction-frame { width: 100% !important; height: 100% !important; border: 0; pointer-events: none !important; }

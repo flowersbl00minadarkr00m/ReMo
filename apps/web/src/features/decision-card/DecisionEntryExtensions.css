@@ -1,0 +1,45 @@
+.decision-inline-check {
+  align-items: center;
+  display: flex !important;
+  flex-direction: row;
+  gap: 0.55rem;
+}
+
+.decision-inline-check input {
+  inline-size: auto;
+  width: auto;
+}
+
+.decision-card,
+.decision-card details,
+.decision-card li,
+.replay-decision-extension {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.decision-card code,
+.decision-card small,
+.decision-card strong,
+.decision-card span {
+  overflow-wrap: anywhere;
+}
+
+.candidate-layout.has-decision-entry .candidate-footer {
+  position: static;
+}
+
+.decision-entry {
+  container-type: inline-size;
+}
+
+@container (max-width: 620px) {
+  .decision-entry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .decision-entry-action {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "remo.hosted-demo-manifest.v1",
+  "fixtureRevision": "rel001-fixture-2026-08-20",
+  "entries": [
+    {
+      "id": "fixture",
+      "path": "/hosted-demo/fixture.json",
+      "mediaType": "application/json",
+      "byteLength": 7777,
+      "digest": "sha256:ef63fef972b03da594ba87e54ecf415c560b20264adf726330e8f431cbe58c3d"
+    }
+  ]
+}

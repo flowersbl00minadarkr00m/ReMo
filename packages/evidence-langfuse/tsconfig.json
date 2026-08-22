@@ -1,0 +1,5 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": { "rootDir": ".", "tsBuildInfoFile": "../../node_modules/.cache/evidence-langfuse.tsbuildinfo" },
+  "include": ["src/**/*.ts"]
+}

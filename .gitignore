@@ -1,0 +1,41 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+
+# Dependencies and package-manager state
+node_modules/
+.pnpm-store/
+
+# Build, test, and browser artifacts
+dist/
+build/
+coverage/
+playwright-report/
+test-results/
+.playwright-cli/
+*.log
+
+# Internal project controls and generated evidence
+.ai/
+.agents/
+.pi/
+artifacts/
+output/
+release-evidence/
+AGENTS.md
+CLAUDE.md
+HANDOFF.md
+SESSION*.md
+
+# ReMo runtime evidence and local databases
+.remo/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

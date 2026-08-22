@@ -1,0 +1,26 @@
+{
+  "name": "@remo/capture-playwright",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./privacy": "./src/privacy/privacy-capture.ts"
+  },
+  "scripts": {
+    "test": "vitest run --maxWorkers=1 --no-file-parallelism",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "playwright": "1.62.1",
+    "pngjs": "7.0.0",
+    "rrweb": "2.0.0-alpha.20"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "@types/pngjs": "6.0.5",
+    "typescript": "5.9.3",
+    "vitest": "4.0.15"
+  }
+}

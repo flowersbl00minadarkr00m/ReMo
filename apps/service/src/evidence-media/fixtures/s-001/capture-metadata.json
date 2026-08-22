@@ -1,0 +1,27 @@
+{
+  "fixture": {
+    "version": "vs001-fixture-v1",
+    "origin": "http://127.0.0.1:4173",
+    "path": "/fixture/save-point",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "privacyReceipt": {
+    "status": "passed",
+    "policyRevision": "remo.privacy.v1",
+    "rrwebDigest": "sha256:408723ab282b2025bad723679ebc981dcba12f7a95e0fa67f71621620675c0a3",
+    "rrwebSize": 5172,
+    "screenshotDigest": "sha256:c253b4ce698d68b277d7e5019f007cb834e9f3de433132d1678c04914d82880a",
+    "screenshotSize": 28543,
+    "checkedAt": "2026-08-18T11:30:00.000Z"
+  },
+  "eventCount": 4,
+  "captureRuntime": {
+    "browser": "151.0.7922.34",
+    "engine": "chromium",
+    "headless": true,
+    "reducedMotion": "reduce"
+  }
+}

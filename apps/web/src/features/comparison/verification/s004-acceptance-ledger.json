@@ -1,0 +1,839 @@
+{
+  "event": "s004.qualified-basic-comparison.production-fixture-verification",
+  "runtime": {
+    "truthLabel": "observed",
+    "sourcePointer": "production web build and local application at exact 127.0.0.1:4175",
+    "node": "v24.17.0",
+    "playwright": "1.62.1",
+    "outputMode": "explicit-committed-refresh",
+    "evidenceRoot": "apps/web/src/features/comparison/verification"
+  },
+  "acceptanceBoundary": {
+    "truthLabel": "verified",
+    "sourcePointer": "actual production UI, authenticated immutable per-save screenshots, persisted capture context, and assertions in apps/web/src/features/comparison/verification/verify-s004.mjs",
+    "claim": "S-004 context-matched layout with truthful unknown-decision parity blocking, independently observed viewport mismatch, same-identity rejection, and deleted-side degradation passed without rich-diff or verdict claims."
+  },
+  "pairs": {
+    "matched": {
+      "before": {
+        "savePointId": "01J00000000000000000000S01",
+        "componentId": "01J00000000000000000000T01:screenshot",
+        "digest": "sha256:df99f19895e0cd3b0311981396f63ee56f94943d7182ca38bdf67e323f149635",
+        "dimensions": {
+          "width": 1440,
+          "height": 900
+        },
+        "context": {
+          "route": "/fixture/save-point",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "fixture": "vs001-ui-sequence-v1",
+          "dependencyDigest": "sha256:5c3a5d59698281cd07a3c4584c4bd85dfc7c2849fea4d5bcea2b7a4248ad6659",
+          "policyRevisions": {
+            "capture": "capture-v2",
+            "privacy": "remo.privacy.v1",
+            "integrity": "remo.privacy.v1",
+            "fidelity": "fidelity-v2"
+          },
+          "lineageId": "lineage:original",
+          "provenance": "observed"
+        }
+      },
+      "after": {
+        "savePointId": "01J00000000000000000000S02",
+        "componentId": "01J00000000000000000000T02:screenshot",
+        "digest": "sha256:df99f19895e0cd3b0311981396f63ee56f94943d7182ca38bdf67e323f149635",
+        "dimensions": {
+          "width": 1440,
+          "height": 900
+        },
+        "context": {
+          "route": "/fixture/save-point",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "fixture": "vs001-ui-sequence-v1",
+          "dependencyDigest": "sha256:5c3a5d59698281cd07a3c4584c4bd85dfc7c2849fea4d5bcea2b7a4248ad6659",
+          "policyRevisions": {
+            "capture": "capture-v2",
+            "privacy": "remo.privacy.v1",
+            "integrity": "remo.privacy.v1",
+            "fidelity": "fidelity-v2"
+          },
+          "lineageId": "lineage:original",
+          "provenance": "observed"
+        }
+      }
+    },
+    "mismatch": {
+      "before": {
+        "savePointId": "01J00000000000000000000S01",
+        "componentId": "01J00000000000000000000T01:screenshot",
+        "digest": "sha256:df99f19895e0cd3b0311981396f63ee56f94943d7182ca38bdf67e323f149635",
+        "dimensions": {
+          "width": 1440,
+          "height": 900
+        },
+        "context": {
+          "route": "/fixture/save-point",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "fixture": "vs001-ui-sequence-v1",
+          "dependencyDigest": "sha256:5c3a5d59698281cd07a3c4584c4bd85dfc7c2849fea4d5bcea2b7a4248ad6659",
+          "policyRevisions": {
+            "capture": "capture-v2",
+            "privacy": "remo.privacy.v1",
+            "integrity": "remo.privacy.v1",
+            "fidelity": "fidelity-v2"
+          },
+          "lineageId": "lineage:original",
+          "provenance": "observed"
+        }
+      },
+      "after": {
+        "savePointId": "01J00000000000000000000S03",
+        "componentId": "01J00000000000000000000T03:screenshot",
+        "digest": "sha256:5c6fa85bd7a94f31281c5b6993a86b32635e307f345b4894232402ab8943bb8c",
+        "dimensions": {
+          "width": 1440,
+          "height": 1000
+        },
+        "context": {
+          "route": "/fixture/save-point",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "fixture": "vs001-ui-sequence-v1",
+          "dependencyDigest": "sha256:5c3a5d59698281cd07a3c4584c4bd85dfc7c2849fea4d5bcea2b7a4248ad6659",
+          "policyRevisions": {
+            "capture": "capture-v2",
+            "privacy": "remo.privacy.v1",
+            "integrity": "remo.privacy.v1",
+            "fidelity": "fidelity-v2"
+          },
+          "lineageId": "lineage:original",
+          "provenance": "observed"
+        }
+      },
+      "truthLabel": "verified",
+      "sourcePointer": "independent production capture/save paths; turn 3 was captured and persisted at 1440x1000"
+    },
+    "degraded": {
+      "before": "01J00000000000000000000S01",
+      "after": "01J00000000000000000000S06"
+    }
+  },
+  "sameIdentityRejection": {
+    "status": 400,
+    "error": "comparison.same-identity"
+  },
+  "deletedSide": {
+    "state": "deleted",
+    "screenshot": "unavailable",
+    "parityClaimAllowed": false,
+    "protectedFetch": false
+  },
+  "matchedContext": {
+    "parityClaimAllowed": false,
+    "decisions": [
+      "unknown",
+      "unknown"
+    ],
+    "qualifiers": [
+      {
+        "code": "evidence",
+        "severity": "blocks-equivalence",
+        "explanation": "Required decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unknown."
+      }
+    ]
+  },
+  "mismatch": {
+    "parityClaimAllowed": false,
+    "qualifiers": [
+      {
+        "code": "evidence",
+        "severity": "blocks-equivalence",
+        "explanation": "Required decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unknown."
+      },
+      {
+        "code": "viewport",
+        "severity": "blocks-equivalence",
+        "explanation": "Captured viewports differ: 1440x900 versus 1440x1000."
+      }
+    ]
+  },
+  "failures": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "requestErrors": [],
+    "unexpectedRequests": []
+  },
+  "captures": [
+    {
+      "fileName": "s004-matched-320.png",
+      "state": "matched",
+      "viewport": {
+        "width": 320,
+        "height": 720
+      },
+      "dimensions": {
+        "clientWidth": 320,
+        "scrollWidth": 320
+      },
+      "focus": {
+        "active": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "3px"
+      },
+      "roles": [
+        "Before · left",
+        "After · right"
+      ],
+      "sideIdentities": [
+        "Before · leftSP-00101J00000000000000000000S01Lineage lineage:originalavailable",
+        "After · rightSP-00201J00000000000000000000S02Lineage lineage:originalavailable"
+      ],
+      "narrowSides": [
+        {
+          "overflowY": "auto",
+          "scrollHeight": 1433,
+          "clientHeight": 512,
+          "scrolled": true,
+          "identityPosition": "sticky"
+        },
+        {
+          "overflowY": "auto",
+          "scrollHeight": 1433,
+          "clientHeight": 512,
+          "scrolled": true,
+          "identityPosition": "sticky"
+        }
+      ],
+      "qualification": "MISMATCH BLOCKS EQUIVALENCE\n\nComparison qualification\nMISMATCH · EVIDENCE\nRequired decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unknown.",
+      "bytes": 110210,
+      "sha256": "63c269052f266841fa0b6f5ba88d7be335b1e319eab22ccfa3069fbfdcc37454"
+    },
+    {
+      "fileName": "s004-mismatch-320.png",
+      "state": "mismatch",
+      "viewport": {
+        "width": 320,
+        "height": 720
+      },
+      "dimensions": {
+        "clientWidth": 320,
+        "scrollWidth": 320
+      },
+      "focus": {
+        "active": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "3px"
+      },
+      "roles": [
+        "Before · left",
+        "After · right"
+      ],
+      "sideIdentities": [
+        "Before · leftSP-00101J00000000000000000000S01Lineage lineage:originalavailable",
+        "After · rightSP-00301J00000000000000000000S03Lineage lineage:originalavailable"
+      ],
+      "narrowSides": [
+        {
+          "overflowY": "auto",
+          "scrollHeight": 1433,
+          "clientHeight": 512,
+          "scrolled": true,
+          "identityPosition": "sticky"
+        },
+        {
+          "overflowY": "auto",
+          "scrollHeight": 1452,
+          "clientHeight": 512,
+          "scrolled": true,
+          "identityPosition": "sticky"
+        }
+      ],
+      "qualification": "MISMATCH BLOCKS EQUIVALENCE\n\nComparison qualification\nMISMATCH · EVIDENCE\nRequired decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unknown.\nMISMATCH · VIEWPORT\nCaptured viewports differ: 1440x900 versus 1440x1000.",
+      "bytes": 112433,
+      "sha256": "a27e9166d57204d6ff5e9c712b27fdfa1c6b15c8fd4d1626a2f66bed15c0fa7d"
+    },
+    {
+      "fileName": "s004-degraded-320.png",
+      "state": "degraded",
+      "viewport": {
+        "width": 320,
+        "height": 720
+      },
+      "dimensions": {
+        "clientWidth": 320,
+        "scrollWidth": 320
+      },
+      "focus": {
+        "active": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "3px"
+      },
+      "roles": [
+        "Before · left",
+        "After · right"
+      ],
+      "sideIdentities": [
+        "Before · leftSP-00101J00000000000000000000S01Lineage lineage:originalavailable",
+        "After · rightUnavailable save point01J00000000000000000000S06Lineage unavailabledeleted"
+      ],
+      "narrowSides": [
+        {
+          "overflowY": "auto",
+          "scrollHeight": 1433,
+          "clientHeight": 512,
+          "scrolled": true,
+          "identityPosition": "sticky"
+        },
+        {
+          "overflowY": "auto",
+          "scrollHeight": 1206,
+          "clientHeight": 512,
+          "scrolled": true,
+          "identityPosition": "sticky"
+        }
+      ],
+      "qualification": "MISMATCH BLOCKS EQUIVALENCE\n\nComparison qualification\nMISMATCH · EVIDENCE\nOne comparison side is missing, deleted, or unavailable; no equivalence claim is supportable.\nMISMATCH · EVIDENCE\nBoth immutable screenshots are not safely available, so visual parity is not claimed.\nMISMATCH · INTEGRITY\nIntegrity must be complete on both sides; before is complete and after is unavailable.\nMISMATCH · FIDELITY\nFidelity must be editable-eligible on both sides; before is editable-eligible and after is unavailable.\nMISMATCH · EVIDENCE\nRequired source and verification evidence must be available on both sides before parity may be claimed.\nMISMATCH · EVIDENCE\nRequired decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unavailable.\nMISMATCH · EVIDENCE\nComparison context is unavailable on one or both sides.",
+      "bytes": 126859,
+      "sha256": "2f3ccaf3d4a649f4e70259766bbc1b42143b06fe11aa104f05ecac3e6c76a380"
+    },
+    {
+      "fileName": "s004-matched-390.png",
+      "state": "matched",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dimensions": {
+        "clientWidth": 390,
+        "scrollWidth": 390
+      },
+      "focus": {
+        "active": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "3px"
+      },
+      "roles": [
+        "Before · left",
+        "After · right"
+      ],
+      "sideIdentities": [
+        "Before · leftSP-00101J00000000000000000000S01Lineage lineage:originalavailable",
+        "After · rightSP-00201J00000000000000000000S02Lineage lineage:originalavailable"
+      ],
+      "narrowSides": [
+        {
+          "overflowY": "auto",
+          "scrollHeight": 1396,
+          "clientHeight": 602,
+          "scrolled": true,
+          "identityPosition": "sticky"
+        },
+        {
+          "overflowY": "auto",
+          "scrollHeight": 1396,
+          "clientHeight": 602,
+          "scrolled": true,
+          "identityPosition": "sticky"
+        }
+      ],
+      "qualification": "MISMATCH BLOCKS EQUIVALENCE\n\nComparison qualification\nMISMATCH · EVIDENCE\nRequired decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unknown.",
+      "bytes": 120787,
+      "sha256": "ee1c4a409e935f5799d232a3dc86bdfc71b61a586692a65c70d3bd8c83df2f4a"
+    },
+    {
+      "fileName": "s004-mismatch-390.png",
+      "state": "mismatch",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dimensions": {
+        "clientWidth": 390,
+        "scrollWidth": 390
+      },
+      "focus": {
+        "active": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "3px"
+      },
+      "roles": [
+        "Before · left",
+        "After · right"
+      ],
+      "sideIdentities": [
+        "Before · leftSP-00101J00000000000000000000S01Lineage lineage:originalavailable",
+        "After · rightSP-00301J00000000000000000000S03Lineage lineage:originalavailable"
+      ],
+      "narrowSides": [
+        {
+          "overflowY": "auto",
+          "scrollHeight": 1396,
+          "clientHeight": 602,
+          "scrolled": true,
+          "identityPosition": "sticky"
+        },
+        {
+          "overflowY": "auto",
+          "scrollHeight": 1421,
+          "clientHeight": 602,
+          "scrolled": true,
+          "identityPosition": "sticky"
+        }
+      ],
+      "qualification": "MISMATCH BLOCKS EQUIVALENCE\n\nComparison qualification\nMISMATCH · EVIDENCE\nRequired decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unknown.\nMISMATCH · VIEWPORT\nCaptured viewports differ: 1440x900 versus 1440x1000.",
+      "bytes": 124134,
+      "sha256": "3f89c84ac96ba1a868d4c6b57e2bf18c6d0a67d3730efe45d3205e3e98e958f0"
+    },
+    {
+      "fileName": "s004-degraded-390.png",
+      "state": "degraded",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dimensions": {
+        "clientWidth": 390,
+        "scrollWidth": 390
+      },
+      "focus": {
+        "active": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "3px"
+      },
+      "roles": [
+        "Before · left",
+        "After · right"
+      ],
+      "sideIdentities": [
+        "Before · leftSP-00101J00000000000000000000S01Lineage lineage:originalavailable",
+        "After · rightUnavailable save point01J00000000000000000000S06Lineage unavailabledeleted"
+      ],
+      "narrowSides": [
+        {
+          "overflowY": "auto",
+          "scrollHeight": 1396,
+          "clientHeight": 602,
+          "scrolled": true,
+          "identityPosition": "sticky"
+        },
+        {
+          "overflowY": "auto",
+          "scrollHeight": 1189,
+          "clientHeight": 602,
+          "scrolled": true,
+          "identityPosition": "sticky"
+        }
+      ],
+      "qualification": "MISMATCH BLOCKS EQUIVALENCE\n\nComparison qualification\nMISMATCH · EVIDENCE\nOne comparison side is missing, deleted, or unavailable; no equivalence claim is supportable.\nMISMATCH · EVIDENCE\nBoth immutable screenshots are not safely available, so visual parity is not claimed.\nMISMATCH · INTEGRITY\nIntegrity must be complete on both sides; before is complete and after is unavailable.\nMISMATCH · FIDELITY\nFidelity must be editable-eligible on both sides; before is editable-eligible and after is unavailable.\nMISMATCH · EVIDENCE\nRequired source and verification evidence must be available on both sides before parity may be claimed.\nMISMATCH · EVIDENCE\nRequired decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unavailable.\nMISMATCH · EVIDENCE\nComparison context is unavailable on one or both sides.",
+      "bytes": 135116,
+      "sha256": "7b69b68dd7504498fed3f4bd16f8664207289c3c418eef7e9b9cad6fc9f4cc4f"
+    },
+    {
+      "fileName": "s004-matched-768.png",
+      "state": "matched",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "dimensions": {
+        "clientWidth": 768,
+        "scrollWidth": 768
+      },
+      "focus": {
+        "active": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "3px"
+      },
+      "roles": [
+        "Before · left",
+        "After · right"
+      ],
+      "sideIdentities": [
+        "Before · leftSP-00101J00000000000000000000S01Lineage lineage:originalavailable",
+        "After · rightSP-00201J00000000000000000000S02Lineage lineage:originalavailable"
+      ],
+      "narrowSides": [
+        {
+          "overflowY": "visible",
+          "scrollHeight": 1291,
+          "clientHeight": 1291,
+          "scrolled": false,
+          "identityPosition": "static"
+        },
+        {
+          "overflowY": "visible",
+          "scrollHeight": 1291,
+          "clientHeight": 1291,
+          "scrolled": false,
+          "identityPosition": "static"
+        }
+      ],
+      "qualification": "MISMATCH BLOCKS EQUIVALENCE\n\nComparison qualification\nMISMATCH · EVIDENCE\nRequired decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unknown.",
+      "bytes": 135408,
+      "sha256": "658c2d39ecb4a06de127e30eefb0cb97c443aa72e8b7dcfb7079bd4b365bc9bc"
+    },
+    {
+      "fileName": "s004-mismatch-768.png",
+      "state": "mismatch",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "dimensions": {
+        "clientWidth": 768,
+        "scrollWidth": 768
+      },
+      "focus": {
+        "active": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "3px"
+      },
+      "roles": [
+        "Before · left",
+        "After · right"
+      ],
+      "sideIdentities": [
+        "Before · leftSP-00101J00000000000000000000S01Lineage lineage:originalavailable",
+        "After · rightSP-00301J00000000000000000000S03Lineage lineage:originalavailable"
+      ],
+      "narrowSides": [
+        {
+          "overflowY": "visible",
+          "scrollHeight": 1291,
+          "clientHeight": 1291,
+          "scrolled": false,
+          "identityPosition": "static"
+        },
+        {
+          "overflowY": "visible",
+          "scrollHeight": 1314,
+          "clientHeight": 1314,
+          "scrolled": false,
+          "identityPosition": "static"
+        }
+      ],
+      "qualification": "MISMATCH BLOCKS EQUIVALENCE\n\nComparison qualification\nMISMATCH · EVIDENCE\nRequired decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unknown.\nMISMATCH · VIEWPORT\nCaptured viewports differ: 1440x900 versus 1440x1000.",
+      "bytes": 184780,
+      "sha256": "fb511c943ef32ab01d0acebfe4fe590839666d63a73f05ba74c8c298d0ee339e"
+    },
+    {
+      "fileName": "s004-degraded-768.png",
+      "state": "degraded",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "dimensions": {
+        "clientWidth": 768,
+        "scrollWidth": 768
+      },
+      "focus": {
+        "active": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "3px"
+      },
+      "roles": [
+        "Before · left",
+        "After · right"
+      ],
+      "sideIdentities": [
+        "Before · leftSP-00101J00000000000000000000S01Lineage lineage:originalavailable",
+        "After · rightUnavailable save point01J00000000000000000000S06Lineage unavailabledeleted"
+      ],
+      "narrowSides": [
+        {
+          "overflowY": "visible",
+          "scrollHeight": 1291,
+          "clientHeight": 1291,
+          "scrolled": false,
+          "identityPosition": "static"
+        },
+        {
+          "overflowY": "visible",
+          "scrollHeight": 1012,
+          "clientHeight": 1012,
+          "scrolled": false,
+          "identityPosition": "static"
+        }
+      ],
+      "qualification": "MISMATCH BLOCKS EQUIVALENCE\n\nComparison qualification\nMISMATCH · EVIDENCE\nOne comparison side is missing, deleted, or unavailable; no equivalence claim is supportable.\nMISMATCH · EVIDENCE\nBoth immutable screenshots are not safely available, so visual parity is not claimed.\nMISMATCH · INTEGRITY\nIntegrity must be complete on both sides; before is complete and after is unavailable.\nMISMATCH · FIDELITY\nFidelity must be editable-eligible on both sides; before is editable-eligible and after is unavailable.\nMISMATCH · EVIDENCE\nRequired source and verification evidence must be available on both sides before parity may be claimed.\nMISMATCH · EVIDENCE\nRequired decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unavailable.\nMISMATCH · EVIDENCE\nComparison context is unavailable on one or both sides.",
+      "bytes": 186337,
+      "sha256": "7b06b012b30b8bd82dbe2bb8976e733bb5530e3a84b3564192b0255c46587918"
+    },
+    {
+      "fileName": "s004-matched-1024.png",
+      "state": "matched",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "dimensions": {
+        "clientWidth": 1024,
+        "scrollWidth": 1024
+      },
+      "focus": {
+        "active": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "3px"
+      },
+      "roles": [
+        "Before · left",
+        "After · right"
+      ],
+      "sideIdentities": [
+        "Before · leftSP-00101J00000000000000000000S01Lineage lineage:originalavailable",
+        "After · rightSP-00201J00000000000000000000S02Lineage lineage:originalavailable"
+      ],
+      "narrowSides": [
+        {
+          "overflowY": "visible",
+          "scrollHeight": 1285,
+          "clientHeight": 1285,
+          "scrolled": false,
+          "identityPosition": "static"
+        },
+        {
+          "overflowY": "visible",
+          "scrollHeight": 1285,
+          "clientHeight": 1285,
+          "scrolled": false,
+          "identityPosition": "static"
+        }
+      ],
+      "qualification": "MISMATCH BLOCKS EQUIVALENCE\n\nComparison qualification\nMISMATCH · EVIDENCE\nRequired decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unknown.",
+      "bytes": 145148,
+      "sha256": "fd44f9e085fc705720c516e6feb778e51be2838143faa84f1f7c7be8c29f78db"
+    },
+    {
+      "fileName": "s004-mismatch-1024.png",
+      "state": "mismatch",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "dimensions": {
+        "clientWidth": 1024,
+        "scrollWidth": 1024
+      },
+      "focus": {
+        "active": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "3px"
+      },
+      "roles": [
+        "Before · left",
+        "After · right"
+      ],
+      "sideIdentities": [
+        "Before · leftSP-00101J00000000000000000000S01Lineage lineage:originalavailable",
+        "After · rightSP-00301J00000000000000000000S03Lineage lineage:originalavailable"
+      ],
+      "narrowSides": [
+        {
+          "overflowY": "visible",
+          "scrollHeight": 1285,
+          "clientHeight": 1285,
+          "scrolled": false,
+          "identityPosition": "static"
+        },
+        {
+          "overflowY": "visible",
+          "scrollHeight": 1310,
+          "clientHeight": 1310,
+          "scrolled": false,
+          "identityPosition": "static"
+        }
+      ],
+      "qualification": "MISMATCH BLOCKS EQUIVALENCE\n\nComparison qualification\nMISMATCH · EVIDENCE\nRequired decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unknown.\nMISMATCH · VIEWPORT\nCaptured viewports differ: 1440x900 versus 1440x1000.",
+      "bytes": 195877,
+      "sha256": "1b8fbf05679f54a41dd6bf6c1ef1a86bc30dd3773e92762cb4b9b4d652c54f7e"
+    },
+    {
+      "fileName": "s004-degraded-1024.png",
+      "state": "degraded",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "dimensions": {
+        "clientWidth": 1024,
+        "scrollWidth": 1024
+      },
+      "focus": {
+        "active": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "3px"
+      },
+      "roles": [
+        "Before · left",
+        "After · right"
+      ],
+      "sideIdentities": [
+        "Before · leftSP-00101J00000000000000000000S01Lineage lineage:originalavailable",
+        "After · rightUnavailable save point01J00000000000000000000S06Lineage unavailabledeleted"
+      ],
+      "narrowSides": [
+        {
+          "overflowY": "visible",
+          "scrollHeight": 1285,
+          "clientHeight": 1285,
+          "scrolled": false,
+          "identityPosition": "static"
+        },
+        {
+          "overflowY": "visible",
+          "scrollHeight": 995,
+          "clientHeight": 995,
+          "scrolled": false,
+          "identityPosition": "static"
+        }
+      ],
+      "qualification": "MISMATCH BLOCKS EQUIVALENCE\n\nComparison qualification\nMISMATCH · EVIDENCE\nOne comparison side is missing, deleted, or unavailable; no equivalence claim is supportable.\nMISMATCH · EVIDENCE\nBoth immutable screenshots are not safely available, so visual parity is not claimed.\nMISMATCH · INTEGRITY\nIntegrity must be complete on both sides; before is complete and after is unavailable.\nMISMATCH · FIDELITY\nFidelity must be editable-eligible on both sides; before is editable-eligible and after is unavailable.\nMISMATCH · EVIDENCE\nRequired source and verification evidence must be available on both sides before parity may be claimed.\nMISMATCH · EVIDENCE\nRequired decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unavailable.\nMISMATCH · EVIDENCE\nComparison context is unavailable on one or both sides.",
+      "bytes": 202188,
+      "sha256": "8bdb5cf135510f949dc5909ff76cd0a8dbd0bc561361c1443c3135510a4e0b6d"
+    },
+    {
+      "fileName": "s004-matched-1440.png",
+      "state": "matched",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensions": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440
+      },
+      "focus": {
+        "active": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "3px"
+      },
+      "roles": [
+        "Before · left",
+        "After · right"
+      ],
+      "sideIdentities": [
+        "Before · leftSP-00101J00000000000000000000S01Lineage lineage:originalavailable",
+        "After · rightSP-00201J00000000000000000000S02Lineage lineage:originalavailable"
+      ],
+      "narrowSides": [
+        {
+          "overflowY": "visible",
+          "scrollHeight": 1256,
+          "clientHeight": 1256,
+          "scrolled": false,
+          "identityPosition": "static"
+        },
+        {
+          "overflowY": "visible",
+          "scrollHeight": 1256,
+          "clientHeight": 1256,
+          "scrolled": false,
+          "identityPosition": "static"
+        }
+      ],
+      "qualification": "MISMATCH BLOCKS EQUIVALENCE\n\nComparison qualification\nMISMATCH · EVIDENCE\nRequired decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unknown.",
+      "bytes": 156301,
+      "sha256": "a9f3030fc2fa7a784137859540b99559042c1b7370ceced743d57924aea8d5cc"
+    },
+    {
+      "fileName": "s004-mismatch-1440.png",
+      "state": "mismatch",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensions": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440
+      },
+      "focus": {
+        "active": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "3px"
+      },
+      "roles": [
+        "Before · left",
+        "After · right"
+      ],
+      "sideIdentities": [
+        "Before · leftSP-00101J00000000000000000000S01Lineage lineage:originalavailable",
+        "After · rightSP-00301J00000000000000000000S03Lineage lineage:originalavailable"
+      ],
+      "narrowSides": [
+        {
+          "overflowY": "visible",
+          "scrollHeight": 1256,
+          "clientHeight": 1256,
+          "scrolled": false,
+          "identityPosition": "static"
+        },
+        {
+          "overflowY": "visible",
+          "scrollHeight": 1294,
+          "clientHeight": 1294,
+          "scrolled": false,
+          "identityPosition": "static"
+        }
+      ],
+      "qualification": "MISMATCH BLOCKS EQUIVALENCE\n\nComparison qualification\nMISMATCH · EVIDENCE\nRequired decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unknown.\nMISMATCH · VIEWPORT\nCaptured viewports differ: 1440x900 versus 1440x1000.",
+      "bytes": 215870,
+      "sha256": "a5bf0731818f38d0052bc224072726de1650e8bea7cb59241f2fdde61eec9a88"
+    },
+    {
+      "fileName": "s004-degraded-1440.png",
+      "state": "degraded",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dimensions": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440
+      },
+      "focus": {
+        "active": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "3px"
+      },
+      "roles": [
+        "Before · left",
+        "After · right"
+      ],
+      "sideIdentities": [
+        "Before · leftSP-00101J00000000000000000000S01Lineage lineage:originalavailable",
+        "After · rightUnavailable save point01J00000000000000000000S06Lineage unavailabledeleted"
+      ],
+      "narrowSides": [
+        {
+          "overflowY": "visible",
+          "scrollHeight": 1256,
+          "clientHeight": 1256,
+          "scrolled": false,
+          "identityPosition": "static"
+        },
+        {
+          "overflowY": "visible",
+          "scrollHeight": 944,
+          "clientHeight": 944,
+          "scrolled": false,
+          "identityPosition": "static"
+        }
+      ],
+      "qualification": "MISMATCH BLOCKS EQUIVALENCE\n\nComparison qualification\nMISMATCH · EVIDENCE\nOne comparison side is missing, deleted, or unavailable; no equivalence claim is supportable.\nMISMATCH · EVIDENCE\nBoth immutable screenshots are not safely available, so visual parity is not claimed.\nMISMATCH · INTEGRITY\nIntegrity must be complete on both sides; before is complete and after is unavailable.\nMISMATCH · FIDELITY\nFidelity must be editable-eligible on both sides; before is editable-eligible and after is unavailable.\nMISMATCH · EVIDENCE\nRequired source and verification evidence must be available on both sides before parity may be claimed.\nMISMATCH · EVIDENCE\nRequired decision evidence must be available on both sides before parity may be claimed; before is unknown and after is unavailable.\nMISMATCH · EVIDENCE\nComparison context is unavailable on one or both sides.",
+      "bytes": 209436,
+      "sha256": "1a535e2c607f384280fecf8b3592b8e9ff6c0e015e5ace0a0334a4ed59440abe"
+    }
+  ]
+}

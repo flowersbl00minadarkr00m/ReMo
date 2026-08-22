@@ -1,0 +1,57 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: #f5f8fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#demo-replay-root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+#demo-replay-root {
+  display: grid;
+  place-items: start center;
+  padding: 0.75rem;
+}
+
+#demo-replay-root[data-runtime-state="waiting-bootstrap"],
+#demo-replay-root[data-runtime-state="waiting-initialize"],
+#demo-replay-root[data-runtime-state="loading-fixture"] {
+  place-items: center;
+}
+
+#demo-replay-root[data-runtime-state="waiting-bootstrap"]::before,
+#demo-replay-root[data-runtime-state="waiting-initialize"]::before,
+#demo-replay-root[data-runtime-state="loading-fixture"]::before {
+  content: "Preparing bounded synthetic replay";
+  color: #31506f;
+  font-size: 0.875rem;
+}
+
+.replayer-wrapper,
+.replayer-wrapper > iframe {
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

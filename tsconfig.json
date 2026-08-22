@@ -1,0 +1,10 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/branch-git" },
+    { "path": "packages/domain" },
+    { "path": "packages/evidence-langfuse" },
+    { "path": "packages/evidence-verification" },
+    { "path": "apps/service" }
+  ]
+}

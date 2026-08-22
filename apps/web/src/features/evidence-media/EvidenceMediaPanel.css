@@ -1,0 +1,22 @@
+.evidence-media { padding: 20px; }
+.evidence-media-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.evidence-media-heading h2 { margin: 4px 0 7px; font-size: 1.12rem; }
+.evidence-media-heading p { margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.5; }
+.screenshot-only-badge { flex: 0 0 auto; padding: 6px 10px; color: #704100; border: 1px solid #e3b66d; border-radius: 999px; background: #fff9ee; font-size: .68rem; font-weight: 760; letter-spacing: .04em; text-transform: uppercase; }
+.media-loading { margin-top: 16px; padding: 18px; color: #31516f; border: 1px solid #cbd3df; border-radius: 7px; background: #f7f9fc; font-size: .8rem; }
+.captured-screenshot { margin: 16px 0 0; overflow: hidden; border: 1px solid #cbd3df; border-radius: 7px; background: #10141a; }
+.captured-screenshot img { display: block; width: 100%; height: auto; max-height: 620px; object-fit: contain; background: #10141a; }
+.captured-screenshot figcaption { display: grid; gap: 3px; padding: 12px 14px; color: #d9e1eb; background: #18202a; font-size: .7rem; line-height: 1.4; }
+.captured-screenshot figcaption strong { color: #fff; font-size: .76rem; }
+.captured-screenshot code { color: #dcecff; overflow-wrap: anywhere; }
+.media-state { margin-top: 16px; padding: 16px; border: 1px solid; border-radius: 7px; }
+.media-state strong { display: block; font-size: .85rem; }
+.media-state p { margin: 5px 0 8px; font-size: .77rem; line-height: 1.45; }
+.media-state code { font-size: .68rem; }
+.media-state-replay-unavailable { color: #704100; border-color: #e3b66d; background: #fff9ee; }
+.media-state-corrupt, .media-state-digest-mismatch, .media-state-player-failure { color: #7a2028; border-color: #e18a91; background: #fff5f6; }
+.replay-retry { margin-top: 10px; min-height: 40px; padding: 8px 13px; color: #0b315e; border: 1px solid #7394b8; border-radius: 6px; background: #f4f8fc; font: inherit; font-weight: 700; cursor: pointer; }
+.replay-retry:hover { background: #e8f1fa; }
+.replay-retry:focus-visible { outline: 3px solid #ec9d25; outline-offset: 2px; }
+.replay-performance { display: block; margin-top: 10px; color: var(--muted); font-size: .68rem; }
+@media (max-width: 700px) { .evidence-media { padding: 16px; } .evidence-media-heading { flex-direction: column; gap: 9px; } }
