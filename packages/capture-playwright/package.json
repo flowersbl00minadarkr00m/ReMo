@@ -13,9 +13,9 @@
     "build": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "playwright": "1.62.1",
+    "playwright": "1.63.0",
     "pngjs": "7.0.0",
-    "rrweb": "2.0.0-alpha.20"
+    "rrweb": "2.1.4"
   },
   "devDependencies": {
     "@types/node": "24.10.1",
